@@ -208,8 +208,8 @@ const pac = (() => {
 // Loads generator.json + judge.json (+ optional records.jsonl) and does everything a person needs
 // at use time: parse a code, judge it, find the smallest fix, run the question form, look up
 // typed words, and render the fixed report. Plain JavaScript, no dependencies, no network.
-// Works in the browser and in Node (ES module). The reference implementation is
-// plugins/policy-action-check/scripts/pac.py; tests/parity.mjs checks that both agree.
+// Works in the browser and in Node (ES module). The reference implementation is the Python
+// engine (src/policy_action_check/engine.py); apps/pac-reader/tests/parity.mjs checks that both agree.
 
 const SUPPORTED_MAJOR = "1";
 const T = 1, U = 0.5, F = 0;

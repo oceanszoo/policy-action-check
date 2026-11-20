@@ -46,6 +46,13 @@ generation are deterministic and use neither a model nor the network.
 /plugin install policy-action-check@oceanszoo-plugins
 ```
 
+This plugin is the Claude Code adapter of the `policy-action-check` package. Its engine,
+`scripts/pac.py`, is a byte-identical copy of the package's `policy_action_check.engine`, and its
+agents use the same prompts as `pac build`, so a bundle built here and one built with
+`pac build --provider ...` follow the same rules and pass the same checks. Without Claude Code,
+use the package instead: `pip install policy-action-check`, then `pac build` with any model
+provider, `pac mcp` for MCP clients, or the `policy-action-check` npm package in a browser.
+
 ## Use
 
 Just ask. You don't pick skills or commands.
@@ -72,7 +79,7 @@ action (words or code) ───▶ encode ─▶ judge (exact engine) ─▶ ou
 | `agents/space-builder` | builds the generator, the judge and the conformance tests |
 | `agents/space-verifier` | second reader: re-checks every rule against the policy text |
 | `agents/action-encoder` | plain words to a code, with similar past records as evidence |
-| `scripts/pac.py` | exact engine, standard-library Python: parse, judge, fix, live panel, hooks |
+| `scripts/pac.py` | exact engine, standard-library Python: parse, judge, fix, live panel, hooks (a synced copy of the package engine; edit `src/policy_action_check/engine.py`) |
 | `hooks/hooks.json` | intent detection, stage validation, unfinished-pipeline guard, optional tool-call guard |
 
 ### Settings
@@ -116,6 +123,7 @@ python3 scripts/pac.py --space policy_space validate   # schema + conformance te
 ## Develop
 
 ```sh
+python3 tools/sync.py         # after editing the engine, prompts or spec in src/policy_action_check/
 python3 -m pytest plugins/policy-action-check/tests
 claude plugin validate plugins/policy-action-check
 ```

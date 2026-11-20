@@ -2,3 +2,6 @@
 tests/fixtures/** text eol=lf
 plugins/policy-action-check/tests/fixtures/** text eol=lf
 apps/pac-reader/** text eol=lf
+src/policy_action_check/** text eol=lf
+packages/pac-js/** text eol=lf
+plugins/policy-action-check/** text eol=lf

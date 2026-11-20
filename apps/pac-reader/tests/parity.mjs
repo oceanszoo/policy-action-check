@@ -5,7 +5,7 @@ import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "no
 import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import * as pac from "../pac.js";
+import * as pac from "../../../packages/pac-js/pac.js";  // the npm package; the reader inlines a synced copy
 import { citationJudge, summaryJudge, policyText, policySummary, exceptionSummary, definitionSummary } from "./citation-fixture.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));

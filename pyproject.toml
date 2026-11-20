@@ -4,18 +4,38 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "policy-action-check"
-version = "0.7.0"
-description = "Policy or terms -> a no-model action-code generator and judge bundle"
+version = "0.8.0"
+description = "Turn policy terms into a bundle that judges actions with no model at use time"
 readme = "README.md"
 license = "MIT"
+license-files = ["LICENSE"]
 requires-python = ">=3.11"
 dependencies = []
+authors = [{ name = "oceanszoo" }]
+keywords = ["policy", "compliance", "terms", "rules", "judge", "mcp", "llm"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+  "Intended Audience :: Developers",
+  "Topic :: Software Development :: Quality Assurance",
+]
+
+[project.urls]
+Homepage = "https://github.com/oceanszoo/policy-action-check"
+Issues = "https://github.com/oceanszoo/policy-action-check/issues"
+
+[project.scripts]
+pac = "policy_action_check.cli:main"
+policy-action-check = "policy_action_check.cli:main"
 
 [project.optional-dependencies]
 dev = ["pytest>=8", "ruff>=0.4"]
 
-[tool.setuptools]
-py-modules = []
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+policy_action_check = ["prompts/*.md", "prompts/agents/*.md"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests", "plugins/policy-action-check/tests"]

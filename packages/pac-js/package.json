@@ -1,0 +1,24 @@
+{
+  "name": "policy-action-check",
+  "version": "0.8.0",
+  "description": "No-model judge for policy-action-check bundles: parse an action code, judge it, find the smallest fix, render the report. Same output as the Python engine.",
+  "type": "module",
+  "main": "./pac.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": { "types": "./index.d.ts", "default": "./pac.js" },
+    "./node": { "types": "./node.d.ts", "default": "./node.js" },
+    "./package.json": "./package.json"
+  },
+  "files": ["pac.js", "node.js", "index.d.ts", "node.d.ts", "README.md", "LICENSE"],
+  "sideEffects": false,
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "test": "node test.mjs"
+  },
+  "keywords": ["policy", "compliance", "terms", "rules", "judge", "action-code"],
+  "repository": { "type": "git", "url": "git+https://github.com/oceanszoo/policy-action-check.git", "directory": "packages/pac-js" },
+  "homepage": "https://github.com/oceanszoo/policy-action-check/tree/main/packages/pac-js#readme",
+  "bugs": "https://github.com/oceanszoo/policy-action-check/issues",
+  "license": "MIT"
+}
