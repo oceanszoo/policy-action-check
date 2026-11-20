@@ -17,13 +17,11 @@ Thanks for helping. Issues and pull requests are welcome.
 - **Unknown is never "no".** Requirement dimensions must not have defaults.
 - **Only embed policy text you may distribute.** Prefer clearly labelled summaries.
 
-## Adding a policy example
+## Test fixtures
 
-1. Create `plugins/policy-action-check/examples/<policy-id>/` with `generator.json`, `judge.json`,
-   `conformance.jsonl` and a `README.md` (source URL, effective date, scope, and a not-affiliated
-   note).
-2. Write conformance vectors from the policy text, not from the engine's output.
-3. Run `python3 plugins/policy-action-check/scripts/pac.py --space <folder> validate` and the tests.
+The repository ships no real policy. Tests use the synthetic bundle in `tests/fixtures/sample-bundle/`
+(an invented "Sample Service Terms"). If you change the bundle format, update the fixture, rerun
+`pac manifest` on it, and keep its conformance vectors written from its own terms text.
 
 ## Before you open a pull request
 

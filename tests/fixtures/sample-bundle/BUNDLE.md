@@ -1,10 +1,10 @@
 ---
-name: pac-anthropic-aup
-description: Check an action against Anthropic Usage Policy with no model, using the policy-action-check bundle in this folder.
+name: pac-sample-bundle
+description: Check an action against Sample Service Terms (synthetic test fixture) with no model, using the policy-action-check bundle in this folder.
 ---
-# Anthropic Usage Policy: policy action bundle
+# Sample Service Terms (synthetic test fixture): policy action bundle
 
-https://www.anthropic.com/legal/aup · format 1.6 · self-exam: passed (2026-11-20T05:08:44+00:00) · 105 categories, 15 features, 21 rules <!-- bundle data: 1119a7310449acaa52e856f7a96b64ee8d12e02302a5fe5eeb39b5f7933a004d -->
+https://example.com/sample-service-terms · format 1.6 · self-exam: passed (2026-11-20T06:32:53+00:00) · 105 categories, 15 features, 21 rules <!-- bundle data: 279e29985fe4ea52604391f18edc335005f84ed087a4f30402070f01149cd368 -->
 
 ## How to use
 - Web app: open pac-reader.html and load this folder.
@@ -228,161 +228,161 @@ https://www.anthropic.com/legal/aup · format 1.6 · self-exam: passed (2026-11-
 ## Rules
 | id | title | kind | what to do | source | terms |
 | --- | --- | --- | --- | --- | --- |
-| `P-illegal` | Illegal activity | prohibition | Do not proceed with this action: it is prohibited regardless of safeguards. | Universal Usage Standards: illegal activity | c001 |
-| `P-critical-infra` | Critical infrastructure | prohibition | Do not proceed with this action: it is prohibited regardless of safeguards. | Universal Usage Standards: critical infrastructure | c002 |
-| `P-cyber` | Computer and network systems | prohibition | Work only on systems you own or have written authorization to test; otherwise do not proceed. | Universal Usage Standards: computer and network systems | c003, c004 |
-| `P-weapons` | Weapons | prohibition | Do not proceed with this action: it is prohibited regardless of safeguards. | Universal Usage Standards: weapons | c005 |
-| `P-violence-hate` | Violence and hate | prohibition | Do not proceed with this action: it is prohibited regardless of safeguards. | Universal Usage Standards: violence and hate | c006 |
-| `P-privacy` | Privacy and identity | prohibition | Do not proceed with this action: it is prohibited regardless of safeguards. | Universal Usage Standards: privacy and identity | c007 |
-| `P-child-safety` | Children's safety | prohibition | Do not proceed with this action: it is prohibited regardless of safeguards. | Universal Usage Standards: children's safety | c008 |
-| `P-harmful-conduct` | Cruel or harmful conduct | prohibition | Do not proceed with this action: it is prohibited regardless of safeguards. | Universal Usage Standards: cruel or harmful conduct | c010 |
-| `P-disinformation` | Disinformation | prohibition | Do not proceed with this action: it is prohibited regardless of safeguards. | Universal Usage Standards: disinformation | c011, c012 |
-| `P-deceptive-campaigns` | Deceptive campaigns | prohibition | Do not proceed with this action: it is prohibited regardless of safeguards. | Universal Usage Standards: deceptive campaigns | c013 |
-| `P-elections` | Democratic processes | prohibition | Do not proceed with this action: it is prohibited regardless of safeguards. | Universal Usage Standards: democratic processes | c014 |
-| `P-surveillance` | Surveillance, censorship and law enforcement | prohibition | Do not proceed with this action: it is prohibited regardless of safeguards. | Universal Usage Standards: surveillance, censorship and law enforcement | c015, c016 |
-| `P-fraud` | Fraud and predatory practices | prohibition | Do not proceed with this action: it is prohibited regardless of safeguards. | Universal Usage Standards: fraud and predatory practices | c017 |
-| `P-platform-abuse` | Platform abuse | prohibition | Do not proceed with this action: it is prohibited regardless of safeguards. | Universal Usage Standards: platform abuse | c018 |
-| `P-sexual-content` | Sexually explicit content | prohibition | Do not proceed with this action: it is prohibited regardless of safeguards. | Universal Usage Standards: sexually explicit content | c019 |
-| `O-hr-review` | Qualified human-in-the-loop | obligation | Have a qualified person (licensed where required) review the recommendation, with power to change it, before it is delivered or used. | High-risk use case requirements: qualified human-in-the-loop | c020, c027 |
-| `O-hr-disclosure` | Disclosure | obligation | Tell the person receiving the advice or decision, clearly, that AI was used. | High-risk use case requirements: disclosure | c021 |
-| `O-physical-stop` | Observe and stop | obligation | Give a qualified operator a way to observe the equipment and stop it at any time. | High-risk physical actions: observe and stop | c022 |
-| `O-physical-safe-state` | Safe state | obligation | Make the equipment stop or hold a safe state when the operator intervenes or the connection drops. | High-risk physical actions: safe state | c023 |
-| `O-physical-limits` | Independent limits | obligation | Enforce operating limits (speed, force, dose, temperature) in a controller independent of the model. | High-risk physical actions: independent limits | c024 |
-| `O-chatbot-disclosure` | Consumer chatbots disclose AI | obligation | Show users that they are talking to an AI, at least at the start of each session or in the interface. | Additional use case guidelines: consumer chatbots disclose AI | c028 |
+| `P-illegal` | Illegal activity | prohibition | Do not proceed with this action: it is prohibited regardless of safeguards. | General rules: illegal activity | c001 |
+| `P-critical-infra` | Critical infrastructure | prohibition | Do not proceed with this action: it is prohibited regardless of safeguards. | General rules: critical infrastructure | c002 |
+| `P-cyber` | Computer and network systems | prohibition | Work only on systems you own or have written authorization to test; otherwise do not proceed. | General rules: computer and network systems | c003, c004 |
+| `P-weapons` | Weapons | prohibition | Do not proceed with this action: it is prohibited regardless of safeguards. | General rules: weapons | c005 |
+| `P-violence-hate` | Violence and hate | prohibition | Do not proceed with this action: it is prohibited regardless of safeguards. | General rules: violence and hate | c006 |
+| `P-privacy` | Privacy and identity | prohibition | Do not proceed with this action: it is prohibited regardless of safeguards. | General rules: privacy and identity | c007 |
+| `P-child-safety` | Children's safety | prohibition | Do not proceed with this action: it is prohibited regardless of safeguards. | General rules: children's safety | c008 |
+| `P-harmful-conduct` | Cruel or harmful conduct | prohibition | Do not proceed with this action: it is prohibited regardless of safeguards. | General rules: cruel or harmful conduct | c010 |
+| `P-disinformation` | Disinformation | prohibition | Do not proceed with this action: it is prohibited regardless of safeguards. | General rules: disinformation | c011, c012 |
+| `P-deceptive-campaigns` | Deceptive campaigns | prohibition | Do not proceed with this action: it is prohibited regardless of safeguards. | General rules: deceptive campaigns | c013 |
+| `P-elections` | Democratic processes | prohibition | Do not proceed with this action: it is prohibited regardless of safeguards. | General rules: democratic processes | c014 |
+| `P-surveillance` | Surveillance, censorship and law enforcement | prohibition | Do not proceed with this action: it is prohibited regardless of safeguards. | General rules: surveillance, censorship and law enforcement | c015, c016 |
+| `P-fraud` | Fraud and predatory practices | prohibition | Do not proceed with this action: it is prohibited regardless of safeguards. | General rules: fraud and predatory practices | c017 |
+| `P-platform-abuse` | Platform abuse | prohibition | Do not proceed with this action: it is prohibited regardless of safeguards. | General rules: platform abuse | c018 |
+| `P-sexual-content` | Sexually explicit content | prohibition | Do not proceed with this action: it is prohibited regardless of safeguards. | General rules: sexually explicit content | c019 |
+| `O-hr-review` | Qualified human-in-the-loop | obligation | Have a qualified person (licensed where required) review the recommendation, with power to change it, before it is delivered or used. | Sensitive uses: qualified human-in-the-loop | c020, c027 |
+| `O-hr-disclosure` | Disclosure | obligation | Tell the person receiving the advice or decision, clearly, that AI was used. | Sensitive uses: disclosure | c021 |
+| `O-physical-stop` | Observe and stop | obligation | Give a qualified operator a way to observe the equipment and stop it at any time. | Physical equipment: observe and stop | c022 |
+| `O-physical-safe-state` | Safe state | obligation | Make the equipment stop or hold a safe state when the operator intervenes or the connection drops. | Physical equipment: safe state | c023 |
+| `O-physical-limits` | Independent limits | obligation | Enforce operating limits (speed, force, dose, temperature) in a controller independent of the model. | Physical equipment: independent limits | c024 |
+| `O-chatbot-disclosure` | Consumer chatbots disclose AI | obligation | Show users that they are talking to an AI, at least at the start of each session or in the interface. | Other uses: consumer chatbots disclose AI | c028 |
 
 ## Terms
 
-**c001** · Universal Usage Standards › Do Not Violate Applicable Laws or Engage in Illegal Activity · prohibition
+**c001** · General rules › Illegal activity · prohibition
 
-> Violate any other applicable laws or regulations
+> Do not use the service to break a law or regulation that applies to you.
 
-**c002** · Universal Usage Standards › Do Not Compromise Critical Infrastructure · prohibition
+**c002** · General rules › Critical infrastructure · prohibition
 
-> Summary (not a quote): No infrastructure sabotage or unauthorized critical-system access.
+> Summary (not a quote): No sabotage of infrastructure and no unapproved access to critical systems.
 
-**c003** · Universal Usage Standards › Do Not Compromise Computer or Network Systems Without Authorization · prohibition
+**c003** · General rules › Computer and network systems · prohibition
 
-> Summary (not a quote): No unauthorized compromise of computers or networks.
+> Summary (not a quote): No breaking into computers or networks without permission.
 
-**c004** · Universal Usage Standards › Do Not Compromise Computer or Network Systems Without Authorization · permission_exception
+**c004** · General rules › Computer and network systems · permission_exception
 
-> Summary (not a quote): Authorized security research and bounty work are allowed.
+> Summary (not a quote): Authorized security research, including bug bounties, is permitted.
 
 links: modifies → c003
 
-**c005** · Universal Usage Standards › Do Not Develop or Design Weapons · prohibition
+**c005** · General rules › Weapons · prohibition
 
-> Summary (not a quote): No weapons development or operation.
+> Summary (not a quote): No building, testing or operating weapons.
 
-**c006** · Universal Usage Standards › Do Not Incite Violence or Hateful Behavior · prohibition
+**c006** · General rules › Violence and hate · prohibition
 
-> Summary (not a quote): No violence, extremism, or protected-trait discrimination.
+> Summary (not a quote): No violent, extremist or discriminatory content.
 
-**c007** · Universal Usage Standards › Do Not Compromise Privacy or Identity Rights · prohibition
+**c007** · General rules › Privacy · prohibition
 
-> sharing personal information without consent
+> Do not disclose another person's personal data unless that person has agreed.
 
-**c008** · Universal Usage Standards › Do Not Compromise Children’s Safety · prohibition
+**c008** · General rules › Minors · prohibition
 
-> Summary (not a quote): No child exploitation, grooming, or abuse.
+> Summary (not a quote): No content that exploits, grooms or harms a child.
 
 links: uses_definition → c009
 
-**c009** · Universal Usage Standards › Do Not Compromise Children’s Safety · definition
+**c009** · General rules › Minors · definition
 
-> any individual under the age of 18 years old, regardless of jurisdiction.
+> A child is any person younger than 18.
 
-**c010** · Universal Usage Standards › Do Not Engage in Cruel, Abusive, or Psychologically Harmful Conduct · prohibition
+**c010** · General rules › Harmful conduct · prohibition
 
-> Summary (not a quote): No self-harm promotion, harassment, or nonconsensual intimate imagery.
+> Summary (not a quote): No encouraging self-harm, no harassment and no intimate images shared without consent.
 
-**c011** · Universal Usage Standards › Do Not Create or Spread Disinformation · prohibition
+**c011** · General rules › False information · prohibition
 
-> Summary (not a quote): No disinformation or deceptive impersonation.
+> Summary (not a quote): No false information and no impersonation meant to deceive.
 
-**c012** · Universal Usage Standards › Do Not Create or Spread Disinformation · permission_exception
+**c012** · General rules › False information · permission_exception
 
-> Summary (not a quote): Disclosed fiction, satire, and parody are exceptions.
+> Summary (not a quote): Clearly labelled fiction, satire, and parody are allowed.
 
 links: modifies → c011
 
-**c013** · Universal Usage Standards › Do Not Engage in Deceptive Campaigns or Artificial Activity · prohibition
+**c013** · General rules › Deceptive campaigns · prohibition
 
-> Summary (not a quote): No fake grassroots support or concealed coordination.
+> Summary (not a quote): No fake grassroots campaigns or hidden coordination.
 
-**c014** · Universal Usage Standards › Do Not Undermine Democratic Processes · prohibition
+**c014** · General rules › Elections · prohibition
 
-> Summary (not a quote): No voter deception, suppression, or election disruption.
+> Summary (not a quote): No misleading voters, keeping people from voting or disrupting elections.
 
-**c015** · Universal Usage Standards › Do Not Use for Surveillance, Censorship, or Prohibited Law Enforcement or Criminal Justice Purposes · prohibition
+**c015** · General rules › Tracking and enforcement · prohibition
 
-> Summary (not a quote): No nonconsensual tracking or criminal-justice decisions.
+> Summary (not a quote): No tracking people without consent and no criminal-justice decisions.
 
-**c016** · Universal Usage Standards › Do Not Use for Surveillance, Censorship, or Prohibited Law Enforcement or Criminal Justice Purposes · permission_exception
+**c016** · General rules › Tracking and enforcement · permission_exception
 
-> Summary (not a quote): Consented tracking and anonymized analysis can qualify for exceptions.
+> Summary (not a quote): Consented tracking and anonymised analysis may be allowed.
 
 links: modifies → c015
 
-**c017** · Universal Usage Standards › Do Not Engage in Fraudulent, Abusive, or Predatory Practices · prohibition
+**c017** · General rules › Fraud · prohibition
 
-> Summary (not a quote): No fraud, scams, spam, or falsified records.
+> Summary (not a quote): No fraud, scams, spam or forged records.
 
-**c018** · Universal Usage Standards › Do Not Abuse Our Platform · prohibition
+**c018** · General rules › Service abuse · prohibition
 
-> Summary (not a quote): No guardrail evasion or unauthorized access.
+> Summary (not a quote): No getting around safeguards and no unapproved access to the service.
 
-**c019** · Universal Usage Standards › Do Not Generate Sexually Explicit Content · prohibition
+**c019** · General rules › Explicit content · prohibition
 
 > Summary (not a quote): No sexually explicit output.
 
-**c020** · High-risk Use Case Requirements › Requirements · obligation
+**c020** · Sensitive uses › Requirements · obligation
 
-> Summary (not a quote): A qualified person must review and can change recommendations beforehand.
+> Summary (not a quote): Before delivery, a qualified person reviews the recommendations and can change them.
 
 links: uses_definition → c025
 
-**c021** · High-risk Use Case Requirements › Requirements · obligation
+**c021** · Sensitive uses › Requirements · obligation
 
 > Summary (not a quote): Tell the affected person that AI was involved.
 
 links: uses_definition → c025
 
-**c022** · High-risk Use Case Requirements › Requirements · obligation
+**c022** · Sensitive uses › Requirements · obligation
 
-> Summary (not a quote): Qualified observer can stop equipment.
-
-links: uses_definition → c026
-
-**c023** · High-risk Use Case Requirements › Requirements · obligation
-
-> Summary (not a quote): Stop or stay safe on intervention or disconnection.
+> Summary (not a quote): A qualified person can watch the equipment and stop it.
 
 links: uses_definition → c026
 
-**c024** · High-risk Use Case Requirements › Requirements · obligation
+**c023** · Sensitive uses › Requirements · obligation
 
-> Summary (not a quote): Enforce safety limits independently of the model.
+> Summary (not a quote): Stop or stay safe when someone intervenes or the link drops.
 
 links: uses_definition → c026
 
-**c025** · High-risk Use Case Requirements › High-risk AI Recommendations · definition
+**c024** · Sensitive uses › Requirements · obligation
 
-> Summary (not a quote): Covered recommendations span specified fields including credit and housing.
+> Summary (not a quote): Keep safety limits enforced outside the model.
 
-**c026** · High-risk Use Case Requirements › High-risk Physical Actions · definition
+links: uses_definition → c026
 
-> Summary (not a quote): Covered actions include unreviewed hardware control with specified hazards.
+**c025** · Sensitive uses › Sensitive recommendations · definition
 
-**c027** · High-risk Use Case Requirements › Favorable Decisions · permission_exception
+> Summary (not a quote): Covered recommendations are listed fields such as credit and housing.
 
-> Summary (not a quote): Where lawful, listed wholly favorable decisions bypass prior review.
+**c026** · Sensitive uses › Physical actions · definition
+
+> Summary (not a quote): Covered actions are hardware control without review where listed hazards exist.
+
+**c027** · Sensitive uses › Favourable decisions · permission_exception
+
+> Summary (not a quote): Where the law allows, wholly favourable listed decisions may bypass prior review.
 
 links: modifies → c020
 
-**c028** · Additional Use Case Guidelines · obligation
+**c028** · Other uses · obligation
 
-> Summary (not a quote): Disclose AI at session start or in the interface.
+> Summary (not a quote): Disclose AI at the start of a session or in the interface.
 
 ## Examples
 | code | verdict | violated |

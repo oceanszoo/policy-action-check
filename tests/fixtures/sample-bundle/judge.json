@@ -3,8 +3,8 @@
   "version": "1.6",
   "semantics": "kleene-3v-1",
   "policy": {
-    "name": "Anthropic Usage Policy",
-    "source": "https://www.anthropic.com/legal/aup",
+    "name": "Sample Service Terms (synthetic test fixture)",
+    "source": "https://example.com/sample-service-terms",
     "effective": "2026-11-12"
   },
   "verdicts": [
@@ -25,7 +25,7 @@
     {
       "id": "P-illegal",
       "kind": "prohibition",
-      "source": "Universal Usage Standards: illegal activity",
+      "source": "General rules: illegal activity",
       "effective_from": "2026-11-12",
       "when": {
         "dim": "pur",
@@ -43,7 +43,7 @@
     {
       "id": "P-critical-infra",
       "kind": "prohibition",
-      "source": "Universal Usage Standards: critical infrastructure",
+      "source": "General rules: critical infrastructure",
       "effective_from": "2026-11-12",
       "when": {
         "dim": "pur",
@@ -61,7 +61,7 @@
     {
       "id": "P-cyber",
       "kind": "prohibition",
-      "source": "Universal Usage Standards: computer and network systems",
+      "source": "General rules: computer and network systems",
       "effective_from": "2026-11-12",
       "when": {
         "dim": "pur",
@@ -90,7 +90,7 @@
     {
       "id": "P-weapons",
       "kind": "prohibition",
-      "source": "Universal Usage Standards: weapons",
+      "source": "General rules: weapons",
       "effective_from": "2026-11-12",
       "when": {
         "dim": "pur",
@@ -108,7 +108,7 @@
     {
       "id": "P-violence-hate",
       "kind": "prohibition",
-      "source": "Universal Usage Standards: violence and hate",
+      "source": "General rules: violence and hate",
       "effective_from": "2026-11-12",
       "when": {
         "dim": "pur",
@@ -126,7 +126,7 @@
     {
       "id": "P-privacy",
       "kind": "prohibition",
-      "source": "Universal Usage Standards: privacy and identity",
+      "source": "General rules: privacy and identity",
       "effective_from": "2026-11-12",
       "when": {
         "all": [
@@ -154,7 +154,7 @@
     {
       "id": "P-child-safety",
       "kind": "prohibition",
-      "source": "Universal Usage Standards: children's safety",
+      "source": "General rules: children's safety",
       "effective_from": "2026-11-12",
       "when": {
         "dim": "pur",
@@ -172,7 +172,7 @@
     {
       "id": "P-harmful-conduct",
       "kind": "prohibition",
-      "source": "Universal Usage Standards: cruel or harmful conduct",
+      "source": "General rules: cruel or harmful conduct",
       "effective_from": "2026-11-12",
       "when": {
         "dim": "pur",
@@ -190,7 +190,7 @@
     {
       "id": "P-disinformation",
       "kind": "prohibition",
-      "source": "Universal Usage Standards: disinformation",
+      "source": "General rules: disinformation",
       "effective_from": "2026-11-12",
       "when": {
         "any": [
@@ -229,7 +229,7 @@
     {
       "id": "P-deceptive-campaigns",
       "kind": "prohibition",
-      "source": "Universal Usage Standards: deceptive campaigns",
+      "source": "General rules: deceptive campaigns",
       "effective_from": "2026-11-12",
       "when": {
         "dim": "pur",
@@ -247,7 +247,7 @@
     {
       "id": "P-elections",
       "kind": "prohibition",
-      "source": "Universal Usage Standards: democratic processes",
+      "source": "General rules: democratic processes",
       "effective_from": "2026-11-12",
       "when": {
         "dim": "pur",
@@ -265,7 +265,7 @@
     {
       "id": "P-surveillance",
       "kind": "prohibition",
-      "source": "Universal Usage Standards: surveillance, censorship and law enforcement",
+      "source": "General rules: surveillance, censorship and law enforcement",
       "effective_from": "2026-11-12",
       "when": {
         "any": [
@@ -305,7 +305,7 @@
     {
       "id": "P-fraud",
       "kind": "prohibition",
-      "source": "Universal Usage Standards: fraud and predatory practices",
+      "source": "General rules: fraud and predatory practices",
       "effective_from": "2026-11-12",
       "when": {
         "dim": "pur",
@@ -323,7 +323,7 @@
     {
       "id": "P-platform-abuse",
       "kind": "prohibition",
-      "source": "Universal Usage Standards: platform abuse",
+      "source": "General rules: platform abuse",
       "effective_from": "2026-11-12",
       "when": {
         "dim": "pur",
@@ -341,7 +341,7 @@
     {
       "id": "P-sexual-content",
       "kind": "prohibition",
-      "source": "Universal Usage Standards: sexually explicit content",
+      "source": "General rules: sexually explicit content",
       "effective_from": "2026-11-12",
       "when": {
         "dim": "pur",
@@ -359,7 +359,7 @@
     {
       "id": "O-hr-review",
       "kind": "obligation",
-      "source": "High-risk use case requirements: qualified human-in-the-loop",
+      "source": "Sensitive uses: qualified human-in-the-loop",
       "effective_from": "2026-11-12",
       "when": {
         "all": [
@@ -399,7 +399,7 @@
     {
       "id": "O-hr-disclosure",
       "kind": "obligation",
-      "source": "High-risk use case requirements: disclosure",
+      "source": "Sensitive uses: disclosure",
       "effective_from": "2026-11-12",
       "when": {
         "all": [
@@ -432,7 +432,7 @@
     {
       "id": "O-physical-stop",
       "kind": "obligation",
-      "source": "High-risk physical actions: observe and stop",
+      "source": "Physical equipment: observe and stop",
       "effective_from": "2026-11-12",
       "when": {
         "dim": "phys",
@@ -455,7 +455,7 @@
     {
       "id": "O-physical-safe-state",
       "kind": "obligation",
-      "source": "High-risk physical actions: safe state",
+      "source": "Physical equipment: safe state",
       "effective_from": "2026-11-12",
       "when": {
         "dim": "phys",
@@ -478,7 +478,7 @@
     {
       "id": "O-physical-limits",
       "kind": "obligation",
-      "source": "High-risk physical actions: independent limits",
+      "source": "Physical equipment: independent limits",
       "effective_from": "2026-11-12",
       "when": {
         "dim": "phys",
@@ -501,7 +501,7 @@
     {
       "id": "O-chatbot-disclosure",
       "kind": "obligation",
-      "source": "Additional use case guidelines: consumer chatbots disclose AI",
+      "source": "Other uses: consumer chatbots disclose AI",
       "effective_from": "2026-11-12",
       "when": {
         "dim": "chat",
@@ -524,31 +524,31 @@
   ],
   "terms": {
     "c001": {
-      "section": "Universal Usage Standards › Do Not Violate Applicable Laws or Engage in Illegal Activity",
-      "text": "Violate any other applicable laws or regulations",
+      "section": "General rules › Illegal activity",
+      "text": "Do not use the service to break a law or regulation that applies to you.",
       "class": "prohibition",
-      "source": "https://www.anthropic.com/legal/aup",
+      "source": "https://example.com/sample-service-terms",
       "refs": []
     },
     "c002": {
-      "section": "Universal Usage Standards › Do Not Compromise Critical Infrastructure",
-      "summary": "No infrastructure sabotage or unauthorized critical-system access.",
+      "section": "General rules › Critical infrastructure",
+      "summary": "No sabotage of infrastructure and no unapproved access to critical systems.",
       "class": "prohibition",
-      "source": "https://www.anthropic.com/legal/aup",
+      "source": "https://example.com/sample-service-terms",
       "refs": []
     },
     "c003": {
-      "section": "Universal Usage Standards › Do Not Compromise Computer or Network Systems Without Authorization",
-      "summary": "No unauthorized compromise of computers or networks.",
+      "section": "General rules › Computer and network systems",
+      "summary": "No breaking into computers or networks without permission.",
       "class": "prohibition",
-      "source": "https://www.anthropic.com/legal/aup",
+      "source": "https://example.com/sample-service-terms",
       "refs": []
     },
     "c004": {
-      "section": "Universal Usage Standards › Do Not Compromise Computer or Network Systems Without Authorization",
-      "summary": "Authorized security research and bounty work are allowed.",
+      "section": "General rules › Computer and network systems",
+      "summary": "Authorized security research, including bug bounties, is permitted.",
       "class": "permission_exception",
-      "source": "https://www.anthropic.com/legal/aup",
+      "source": "https://example.com/sample-service-terms",
       "refs": [
         {
           "to": "c003",
@@ -558,31 +558,31 @@
       ]
     },
     "c005": {
-      "section": "Universal Usage Standards › Do Not Develop or Design Weapons",
-      "summary": "No weapons development or operation.",
+      "section": "General rules › Weapons",
+      "summary": "No building, testing or operating weapons.",
       "class": "prohibition",
-      "source": "https://www.anthropic.com/legal/aup",
+      "source": "https://example.com/sample-service-terms",
       "refs": []
     },
     "c006": {
-      "section": "Universal Usage Standards › Do Not Incite Violence or Hateful Behavior",
-      "summary": "No violence, extremism, or protected-trait discrimination.",
+      "section": "General rules › Violence and hate",
+      "summary": "No violent, extremist or discriminatory content.",
       "class": "prohibition",
-      "source": "https://www.anthropic.com/legal/aup",
+      "source": "https://example.com/sample-service-terms",
       "refs": []
     },
     "c007": {
-      "section": "Universal Usage Standards › Do Not Compromise Privacy or Identity Rights",
-      "text": "sharing personal information without consent",
+      "section": "General rules › Privacy",
+      "text": "Do not disclose another person's personal data unless that person has agreed.",
       "class": "prohibition",
-      "source": "https://www.anthropic.com/legal/aup",
+      "source": "https://example.com/sample-service-terms",
       "refs": []
     },
     "c008": {
-      "section": "Universal Usage Standards › Do Not Compromise Children’s Safety",
-      "summary": "No child exploitation, grooming, or abuse.",
+      "section": "General rules › Minors",
+      "summary": "No content that exploits, grooms or harms a child.",
       "class": "prohibition",
-      "source": "https://www.anthropic.com/legal/aup",
+      "source": "https://example.com/sample-service-terms",
       "refs": [
         {
           "to": "c009",
@@ -592,31 +592,31 @@
       ]
     },
     "c009": {
-      "section": "Universal Usage Standards › Do Not Compromise Children’s Safety",
-      "text": "any individual under the age of 18 years old, regardless of jurisdiction.",
+      "section": "General rules › Minors",
+      "text": "A child is any person younger than 18.",
       "class": "definition",
-      "source": "https://www.anthropic.com/legal/aup",
+      "source": "https://example.com/sample-service-terms",
       "refs": []
     },
     "c010": {
-      "section": "Universal Usage Standards › Do Not Engage in Cruel, Abusive, or Psychologically Harmful Conduct",
-      "summary": "No self-harm promotion, harassment, or nonconsensual intimate imagery.",
+      "section": "General rules › Harmful conduct",
+      "summary": "No encouraging self-harm, no harassment and no intimate images shared without consent.",
       "class": "prohibition",
-      "source": "https://www.anthropic.com/legal/aup",
+      "source": "https://example.com/sample-service-terms",
       "refs": []
     },
     "c011": {
-      "section": "Universal Usage Standards › Do Not Create or Spread Disinformation",
-      "summary": "No disinformation or deceptive impersonation.",
+      "section": "General rules › False information",
+      "summary": "No false information and no impersonation meant to deceive.",
       "class": "prohibition",
-      "source": "https://www.anthropic.com/legal/aup",
+      "source": "https://example.com/sample-service-terms",
       "refs": []
     },
     "c012": {
-      "section": "Universal Usage Standards › Do Not Create or Spread Disinformation",
-      "summary": "Disclosed fiction, satire, and parody are exceptions.",
+      "section": "General rules › False information",
+      "summary": "Clearly labelled fiction, satire, and parody are allowed.",
       "class": "permission_exception",
-      "source": "https://www.anthropic.com/legal/aup",
+      "source": "https://example.com/sample-service-terms",
       "refs": [
         {
           "to": "c011",
@@ -626,31 +626,31 @@
       ]
     },
     "c013": {
-      "section": "Universal Usage Standards › Do Not Engage in Deceptive Campaigns or Artificial Activity",
-      "summary": "No fake grassroots support or concealed coordination.",
+      "section": "General rules › Deceptive campaigns",
+      "summary": "No fake grassroots campaigns or hidden coordination.",
       "class": "prohibition",
-      "source": "https://www.anthropic.com/legal/aup",
+      "source": "https://example.com/sample-service-terms",
       "refs": []
     },
     "c014": {
-      "section": "Universal Usage Standards › Do Not Undermine Democratic Processes",
-      "summary": "No voter deception, suppression, or election disruption.",
+      "section": "General rules › Elections",
+      "summary": "No misleading voters, keeping people from voting or disrupting elections.",
       "class": "prohibition",
-      "source": "https://www.anthropic.com/legal/aup",
+      "source": "https://example.com/sample-service-terms",
       "refs": []
     },
     "c015": {
-      "section": "Universal Usage Standards › Do Not Use for Surveillance, Censorship, or Prohibited Law Enforcement or Criminal Justice Purposes",
-      "summary": "No nonconsensual tracking or criminal-justice decisions.",
+      "section": "General rules › Tracking and enforcement",
+      "summary": "No tracking people without consent and no criminal-justice decisions.",
       "class": "prohibition",
-      "source": "https://www.anthropic.com/legal/aup",
+      "source": "https://example.com/sample-service-terms",
       "refs": []
     },
     "c016": {
-      "section": "Universal Usage Standards › Do Not Use for Surveillance, Censorship, or Prohibited Law Enforcement or Criminal Justice Purposes",
-      "summary": "Consented tracking and anonymized analysis can qualify for exceptions.",
+      "section": "General rules › Tracking and enforcement",
+      "summary": "Consented tracking and anonymised analysis may be allowed.",
       "class": "permission_exception",
-      "source": "https://www.anthropic.com/legal/aup",
+      "source": "https://example.com/sample-service-terms",
       "refs": [
         {
           "to": "c015",
@@ -660,31 +660,31 @@
       ]
     },
     "c017": {
-      "section": "Universal Usage Standards › Do Not Engage in Fraudulent, Abusive, or Predatory Practices",
-      "summary": "No fraud, scams, spam, or falsified records.",
+      "section": "General rules › Fraud",
+      "summary": "No fraud, scams, spam or forged records.",
       "class": "prohibition",
-      "source": "https://www.anthropic.com/legal/aup",
+      "source": "https://example.com/sample-service-terms",
       "refs": []
     },
     "c018": {
-      "section": "Universal Usage Standards › Do Not Abuse Our Platform",
-      "summary": "No guardrail evasion or unauthorized access.",
+      "section": "General rules › Service abuse",
+      "summary": "No getting around safeguards and no unapproved access to the service.",
       "class": "prohibition",
-      "source": "https://www.anthropic.com/legal/aup",
+      "source": "https://example.com/sample-service-terms",
       "refs": []
     },
     "c019": {
-      "section": "Universal Usage Standards › Do Not Generate Sexually Explicit Content",
+      "section": "General rules › Explicit content",
       "summary": "No sexually explicit output.",
       "class": "prohibition",
-      "source": "https://www.anthropic.com/legal/aup",
+      "source": "https://example.com/sample-service-terms",
       "refs": []
     },
     "c020": {
-      "section": "High-risk Use Case Requirements › Requirements",
-      "summary": "A qualified person must review and can change recommendations beforehand.",
+      "section": "Sensitive uses › Requirements",
+      "summary": "Before delivery, a qualified person reviews the recommendations and can change them.",
       "class": "obligation",
-      "source": "https://www.anthropic.com/legal/aup",
+      "source": "https://example.com/sample-service-terms",
       "refs": [
         {
           "to": "c025",
@@ -694,10 +694,10 @@
       ]
     },
     "c021": {
-      "section": "High-risk Use Case Requirements › Requirements",
+      "section": "Sensitive uses › Requirements",
       "summary": "Tell the affected person that AI was involved.",
       "class": "obligation",
-      "source": "https://www.anthropic.com/legal/aup",
+      "source": "https://example.com/sample-service-terms",
       "refs": [
         {
           "to": "c025",
@@ -707,10 +707,10 @@
       ]
     },
     "c022": {
-      "section": "High-risk Use Case Requirements › Requirements",
-      "summary": "Qualified observer can stop equipment.",
+      "section": "Sensitive uses › Requirements",
+      "summary": "A qualified person can watch the equipment and stop it.",
       "class": "obligation",
-      "source": "https://www.anthropic.com/legal/aup",
+      "source": "https://example.com/sample-service-terms",
       "refs": [
         {
           "to": "c026",
@@ -720,10 +720,10 @@
       ]
     },
     "c023": {
-      "section": "High-risk Use Case Requirements › Requirements",
-      "summary": "Stop or stay safe on intervention or disconnection.",
+      "section": "Sensitive uses › Requirements",
+      "summary": "Stop or stay safe when someone intervenes or the link drops.",
       "class": "obligation",
-      "source": "https://www.anthropic.com/legal/aup",
+      "source": "https://example.com/sample-service-terms",
       "refs": [
         {
           "to": "c026",
@@ -733,10 +733,10 @@
       ]
     },
     "c024": {
-      "section": "High-risk Use Case Requirements › Requirements",
-      "summary": "Enforce safety limits independently of the model.",
+      "section": "Sensitive uses › Requirements",
+      "summary": "Keep safety limits enforced outside the model.",
       "class": "obligation",
-      "source": "https://www.anthropic.com/legal/aup",
+      "source": "https://example.com/sample-service-terms",
       "refs": [
         {
           "to": "c026",
@@ -746,24 +746,24 @@
       ]
     },
     "c025": {
-      "section": "High-risk Use Case Requirements › High-risk AI Recommendations",
-      "summary": "Covered recommendations span specified fields including credit and housing.",
+      "section": "Sensitive uses › Sensitive recommendations",
+      "summary": "Covered recommendations are listed fields such as credit and housing.",
       "class": "definition",
-      "source": "https://www.anthropic.com/legal/aup",
+      "source": "https://example.com/sample-service-terms",
       "refs": []
     },
     "c026": {
-      "section": "High-risk Use Case Requirements › High-risk Physical Actions",
-      "summary": "Covered actions include unreviewed hardware control with specified hazards.",
+      "section": "Sensitive uses › Physical actions",
+      "summary": "Covered actions are hardware control without review where listed hazards exist.",
       "class": "definition",
-      "source": "https://www.anthropic.com/legal/aup",
+      "source": "https://example.com/sample-service-terms",
       "refs": []
     },
     "c027": {
-      "section": "High-risk Use Case Requirements › Favorable Decisions",
-      "summary": "Where lawful, listed wholly favorable decisions bypass prior review.",
+      "section": "Sensitive uses › Favourable decisions",
+      "summary": "Where the law allows, wholly favourable listed decisions may bypass prior review.",
       "class": "permission_exception",
-      "source": "https://www.anthropic.com/legal/aup",
+      "source": "https://example.com/sample-service-terms",
       "refs": [
         {
           "to": "c020",
@@ -773,10 +773,10 @@
       ]
     },
     "c028": {
-      "section": "Additional Use Case Guidelines",
-      "summary": "Disclose AI at session start or in the interface.",
+      "section": "Other uses",
+      "summary": "Disclose AI at the start of a session or in the interface.",
       "class": "obligation",
-      "source": "https://www.anthropic.com/legal/aup",
+      "source": "https://example.com/sample-service-terms",
       "refs": []
     }
   }

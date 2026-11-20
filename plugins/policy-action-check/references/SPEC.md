@@ -70,8 +70,8 @@ generator `outcome_map` and `exam`, judge `not_encoded`, record `disagreement`.
 ## bundle.json
 
 ```json
-{"format": "pac-bundle", "version": "1.2", "name": "anthropic-aup",
- "policy": "https://www.anthropic.com/aup",
+{"format": "pac-bundle", "version": "1.2", "name": "my-terms",
+ "policy": "https://example.com/terms",
  "files": {"generator.json": "<sha256>", "judge.json": "<sha256>", "conformance.jsonl": "<sha256>"},
  "created": "2026-11-18T05:40:00+00:00", "spec": "<url of this document>"}
 ```
@@ -499,16 +499,16 @@ implementation is `scripts/pac.py` (`pac.py validate` runs these tests).
 This is the output of the term filter. Only `normative` classes may become rules.
 
 ```json
-{"source": "https://www.anthropic.com/aup",
+{"source": "https://example.com/terms",
  "clauses": [
-  {"id": "c014", "section": "High-risk use case requirements", "class": "obligation",
-   "text": "A qualified person must meaningfully review the recommendation ...",
+  {"id": "c014", "section": "Sensitive uses", "class": "obligation",
+   "text": "A qualified person must review the recommendation ...",
    "signals": ["must"], "binds": "deployer", "confidence": "high"},
-  {"id": "c015", "section": "High-risk use case requirements", "class": "permission_exception",
-   "text": "Human review is not required before acting on a wholly favorable ...",
+  {"id": "c015", "section": "Sensitive uses", "class": "permission_exception",
+   "text": "Review is not required before a wholly favourable decision ...",
    "modifies": "c014", "confidence": "high"},
   {"id": "c002", "section": "Introduction", "class": "description",
-   "text": "We want our tools to be used safely ..."}]}
+   "text": "These terms explain how the service may be used ..."}]}
 ```
 
 The classes are:

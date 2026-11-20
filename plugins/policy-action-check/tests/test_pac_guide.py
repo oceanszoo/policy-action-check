@@ -19,7 +19,7 @@ import pac
 
 @pytest.fixture
 def bundle(tmp_path):
-    return shutil.copytree(ROOT / "examples" / "anthropic-aup", tmp_path / "bundle")
+    return shutil.copytree(ROOT.parents[1] / "tests" / "fixtures" / "sample-bundle", tmp_path / "bundle")
 
 
 def guide_cli(bundle, *args):

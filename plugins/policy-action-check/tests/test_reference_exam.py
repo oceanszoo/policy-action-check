@@ -27,7 +27,7 @@ def ref(target, kind, text, **kw):
 
 @pytest.fixture
 def bundle(tmp_path):
-    example = PLUGIN / "examples" / "anthropic-aup"
+    example = PLUGIN.parents[1] / "tests" / "fixtures" / "sample-bundle"
     root = tmp_path / "space"
     shutil.copytree(example, root, ignore=shutil.ignore_patterns("work"))
     judge = json.loads((root / "judge.json").read_text(encoding="utf-8"))

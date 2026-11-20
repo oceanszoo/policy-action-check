@@ -21,4 +21,4 @@ jobs:
       - name: Reader build is current
         run: node apps/pac-reader/build.mjs --check
       - name: Example bundle validates
-        run: python3 plugins/policy-action-check/scripts/pac.py --space plugins/policy-action-check/examples/anthropic-aup validate
+        run: python3 plugins/policy-action-check/scripts/pac.py --space tests/fixtures/sample-bundle validate

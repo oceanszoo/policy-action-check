@@ -2,8 +2,8 @@
   "format": "pac-generator",
   "version": "1.6",
   "policy": {
-    "name": "Anthropic Usage Policy",
-    "source": "https://www.anthropic.com/legal/aup",
+    "name": "Sample Service Terms (synthetic test fixture)",
+    "source": "https://example.com/sample-service-terms",
     "effective": "2026-11-12"
   },
   "grammar": "pac-code-1",

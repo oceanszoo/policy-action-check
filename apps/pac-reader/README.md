@@ -27,7 +27,7 @@ the result: the report lists every region the case could land in, for example
 ## Use it
 
 - **Easiest:** open [`dist/pac-reader.html`](dist/pac-reader.html) in a browser (double-click it). It is one
-  self-contained file and works offline. Press "Try the example" or open your own bundle folder.
+  self-contained file and works offline. Open your bundle folder or its files.
 - **Host it:** put the `dist/` file on any static host (GitHub Pages works).
 
 What it shows when a bundle loads:
@@ -40,7 +40,7 @@ What it shows when a bundle loads:
 |---|---|
 | `pac.js` | the engine: parse codes, judge (three-valued rules), smallest fix, question form, keyword lookup, report. Plain JavaScript, no dependencies, browser and Node |
 | `app.js`, `index.html`, `styles.css` | the page |
-| `build.mjs` | writes `example-bundle.js` and the single-file `dist/pac-reader.html` |
+| `build.mjs` | writes the single-file `dist/pac-reader.html` |
 
 `pac.js` follows `plugins/policy-action-check/references/SPEC.md` and must agree exactly with the
 reference engine `plugins/policy-action-check/scripts/pac.py`.
@@ -48,7 +48,7 @@ reference engine `plugins/policy-action-check/scripts/pac.py`.
 ## Develop
 
 ```sh
-node apps/pac-reader/build.mjs            # rebuild example-bundle.js and dist/pac-reader.html
+node apps/pac-reader/build.mjs            # rebuild dist/pac-reader.html
 node apps/pac-reader/tests/parity.mjs     # JS vs pac.py on every bundle in the repo (needs python3)
 node apps/pac-reader/tests/ui.mjs         # browser smoke test of the built page (needs playwright)
 ```

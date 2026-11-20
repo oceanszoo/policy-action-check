@@ -51,7 +51,7 @@ generation are deterministic and use neither a model nor the network.
 Just ask. You don't pick skills or commands.
 
 - "Build a policy bundle from `terms.md` and `history.csv`."
-- "Can our claims bot auto-deny claims under the Anthropic usage policy?"
+- "Can our claims bot auto-deny claims under our service terms?"
 - "`act=biz pur=std hr=emp scope=ind fav=part rev=n`: is this ok?"
 
 A prompt hook spots policy questions and starts the pipeline. When it finishes, you get the
@@ -74,7 +74,6 @@ action (words or code) ───▶ encode ─▶ judge (exact engine) ─▶ ou
 | `agents/action-encoder` | plain words to a code, with similar past records as evidence |
 | `scripts/pac.py` | exact engine, standard-library Python: parse, judge, fix, live panel, hooks |
 | `hooks/hooks.json` | intent detection, stage validation, unfinished-pipeline guard, optional tool-call guard |
-| `examples/anthropic-aup` | a complete bundle for the Anthropic Usage Policy (effective 2026-11-12) |
 
 ### Settings
 
@@ -102,16 +101,16 @@ python3 scripts/pac.py --space policy_space exam
 ## Use a bundle without Claude (no model)
 
 ```sh
-python3 scripts/pac.py --space examples/anthropic-aup form          # answer questions, get the report
-python3 scripts/pac.py --space examples/anthropic-aup ask "pur=std hr=ins"   # next question as JSON
-python3 scripts/pac.py --space examples/anthropic-aup lookup "chatbot that denies insurance claims"
-python3 scripts/pac.py --space examples/anthropic-aup categories            # the case map (a tree of categories)
-python3 scripts/pac.py --space examples/anthropic-aup fit "pur=cyber auth=own"   # which category a code fits
-python3 scripts/pac.py --space examples/anthropic-aup report "a: @support-bot disc=y & b: pur=cyber > c: @robot-shared"   # cases at the same time (&) and step by step (>)
-python3 scripts/pac.py --space examples/anthropic-aup report "act=biz pur=std hr=ins scope=ind fav=part"
-python3 scripts/pac.py --space examples/anthropic-aup check "@support-bot"
-python3 scripts/pac.py --space examples/anthropic-aup panel "act=biz pur=std hr=ins scope=ind rev=n"
-python3 scripts/pac.py --space examples/anthropic-aup validate   # schema + conformance tests
+python3 scripts/pac.py --space policy_space form          # answer questions, get the report
+python3 scripts/pac.py --space policy_space ask "pur=std hr=ins"   # next question as JSON
+python3 scripts/pac.py --space policy_space lookup "chatbot that denies insurance claims"
+python3 scripts/pac.py --space policy_space categories            # the case map (a tree of categories)
+python3 scripts/pac.py --space policy_space fit "pur=cyber auth=own"   # which category a code fits
+python3 scripts/pac.py --space policy_space report "a: @support-bot disc=y & b: pur=cyber > c: @robot-shared"   # cases at the same time (&) and step by step (>)
+python3 scripts/pac.py --space policy_space report "act=biz pur=std hr=ins scope=ind fav=part"
+python3 scripts/pac.py --space policy_space check "@support-bot"
+python3 scripts/pac.py --space policy_space panel "act=biz pur=std hr=ins scope=ind rev=n"
+python3 scripts/pac.py --space policy_space validate   # schema + conformance tests
 ```
 
 ## Develop
@@ -121,8 +120,7 @@ python3 -m pytest plugins/policy-action-check/tests
 claude plugin validate plugins/policy-action-check
 ```
 
-To add a policy, add an example bundle under `examples/<policy>/` with a README, and make sure
-`pac.py validate` passes. Every rule needs a `source`, and every rule needs at least one
-conformance vector. See [CONTRIBUTING.md](CONTRIBUTING.md).
+Tests use the synthetic bundle in `tests/fixtures/sample-bundle/` at the repository root (its codes,
+such as `@support-bot`, are the ones in the examples above). See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 This is a structured self-check, not legal advice.

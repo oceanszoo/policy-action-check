@@ -1,19 +1,19 @@
 {
   "format": "pac-bundle",
   "version": "1.6",
-  "name": "anthropic-aup",
-  "policy": "https://www.anthropic.com/legal/aup",
+  "name": "sample-bundle",
+  "policy": "https://example.com/sample-service-terms",
   "files": {
-    "generator.json": "59e58c2576864881b1ee7acf3688a85a7e18597dfd11358e762fd30d9d227aa8",
-    "judge.json": "ffcd29579e2e87868bfde90e629a48992a7147e68df75ceb4d5c3eaaf81f7b27",
+    "generator.json": "1d0afcf2491b89e7b7d9d162e15fd0ea3654b184b90e1ef3ca355bbaf6b4c818",
+    "judge.json": "bc48f78e9fd982c66e9def06349eac427f5fc56706b576a74d656c8347dde7c5",
     "conformance.jsonl": "5cc8e47a7e569dbf6953d3eb4b0d589b108c6b02625a02072ac48f39dfa1aac3",
-    "BUNDLE.md": "77fe75f189bc11e9b5e8da00a344771858faf771c4c1bffeedb0d1a56ab1906b"
+    "BUNDLE.md": "d3cdb47c7c314a28b0459da30bede9fb083c6f66d44af58d0f0013d52cbea498"
   },
-  "created": "2026-11-20T05:08:44+00:00",
+  "created": "2026-11-20T06:32:53+00:00",
   "spec": "https://github.com/oceanszoo/policy-action-check/blob/main/plugins/policy-action-check/references/SPEC.md",
   "exam": {
     "passed": true,
-    "date": "2026-11-20T05:08:44+00:00",
+    "date": "2026-11-20T06:32:53+00:00",
     "engine_spec": "1.6",
     "scores": {
       "references": 1.0,

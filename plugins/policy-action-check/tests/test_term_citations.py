@@ -5,7 +5,7 @@ import shutil
 from pathlib import Path
 
 import pytest
-from test_pac import AUP, pac
+from test_pac import SAMPLE, pac
 
 DATE = "2026-11-20"
 SOURCE = "https://example.org/privacy-policy"
@@ -23,7 +23,7 @@ def _change(path: Path, fn):
 @pytest.fixture
 def cited_space(tmp_path):
     bundle = tmp_path / "cited"
-    shutil.copytree(AUP, bundle)
+    shutil.copytree(SAMPLE, bundle)
     (bundle / "conformance.jsonl").unlink()
     (bundle / "work").mkdir(exist_ok=True)
     (bundle / "work/terms.json").write_text(json.dumps({
@@ -126,7 +126,7 @@ def test_violated_and_excepted_prohibition_cite_constraints(cited_space):
 @pytest.fixture
 def legacy_space(tmp_path):
     bundle = tmp_path / "legacy"
-    shutil.copytree(AUP, bundle)
+    shutil.copytree(SAMPLE, bundle)
     _change(bundle / "generator.json", lambda gen: gen.update(version="1.5"))
 
     def without_citations(judge):
@@ -150,20 +150,20 @@ def test_old_bundle_fallback_is_a_warning_only(legacy_space):
     result = pac.check("act=biz pur=data cons=n", sp, DATE)
     [entry] = result["terms"]
     assert entry["terms"] == [{"id": None, "role": "rule",
-                               "section": "Universal Usage Standards: privacy and identity", "text": None}]
+                               "section": "General rules: privacy and identity", "text": None}]
     assert result["next_actions"][0]["terms"] == []
 
 
 def test_shipped_privacy_case_reports_an_exact_policy_excerpt():
-    space = pac.Space(AUP)
+    space = pac.Space(SAMPLE)
     result = pac.check("act=biz pur=data cons=n", space, DATE)
     assert result["verdict"] == "violates"
     [entry] = result["terms"]
     assert entry["rule"] == "P-privacy"
     privacy = next(term for term in entry["terms"] if term["role"] == "rule")
-    assert "sharing personal information without consent" in privacy["text"]
+    assert "personal data unless that person has agreed" in privacy["text"]
     assert "summary" not in privacy["text"].lower()
-    assert space.judge["terms"][privacy["id"]]["source"] == "https://www.anthropic.com/legal/aup"
+    assert space.judge["terms"][privacy["id"]]["source"] == "https://example.com/sample-service-terms"
     assert privacy["text"] in pac.render_report(result, space)
 
 
@@ -232,7 +232,7 @@ def test_validate_rejects_invalid_citation_fields(cited_space, fields, expected_
 
 
 def test_shipped_exact_excerpts_are_short():
-    terms = pac.Space(AUP).judge["terms"]
+    terms = pac.Space(SAMPLE).judge["terms"]
     quotes = [term["text"] for term in terms.values() if "text" in term]
     assert quotes and all(0 < len(quote.split()) <= 25 for quote in quotes)
 

@@ -1,6 +1,5 @@
 // Policy Action Reader: the page. All judging is done by pac.js; this file only draws it.
 import * as pac from "./pac.js";
-import { EXAMPLE } from "./example-bundle.js";
 
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
@@ -364,7 +363,6 @@ function download(name, text, type) {
 
 $("pick-folder").addEventListener("change", (e) => loadFiles([...e.target.files]));
 $("pick-files").addEventListener("change", (e) => loadFiles([...e.target.files]));
-$("load-example").addEventListener("click", () => openBundle(EXAMPLE, "example"));
 const drop = $("drop");
 drop.addEventListener("dragover", (e) => { e.preventDefault(); drop.classList.add("over"); });
 drop.addEventListener("dragleave", () => drop.classList.remove("over"));

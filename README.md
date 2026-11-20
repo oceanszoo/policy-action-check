@@ -22,9 +22,8 @@ The bundle format is specified in
 
 ## Quick start
 
-**Try the reader.** Download [`apps/pac-reader/dist/pac-reader.html`](apps/pac-reader/dist/pac-reader.html),
-open it in a browser and press **Try the example**. The example bundle is built from Anthropic's
-public Usage Policy; see [its README](plugins/policy-action-check/examples/anthropic-aup/README.md).
+**Open a bundle in the reader.** Download [`apps/pac-reader/dist/pac-reader.html`](apps/pac-reader/dist/pac-reader.html),
+open it in a browser and choose your bundle folder.
 
 **Build your own bundle (Claude Code).**
 
@@ -38,14 +37,14 @@ Then ask, for example: "Build a policy bundle from `terms.md` and `history.csv`.
 **Judge a code from the command line.**
 
 ```sh
-python3 plugins/policy-action-check/scripts/pac.py --space plugins/policy-action-check/examples/anthropic-aup validate
+python3 plugins/policy-action-check/scripts/pac.py --space tests/fixtures/sample-bundle validate
 ```
 
 ## Layout
 
 ```
 .claude-plugin/marketplace.json   Claude Code marketplace entry
-plugins/policy-action-check/      plugin: agents, hooks, skill, engine (scripts/pac.py), spec, example bundle, tests
+plugins/policy-action-check/      plugin: agents, hooks, skill, engine (scripts/pac.py), spec, tests
 apps/pac-reader/                  web reader: pac.js engine (same behaviour as pac.py), page, build, tests
 tests/                            cross-checks between the reader and the Python engine
 ```
@@ -63,9 +62,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Disclaimer
 
-Bundles are aids for reasoning about policies, not legal advice. Example bundles summarise public
-policies for demonstration; the official policy text always controls. This project is not
-affiliated with or endorsed by any policy owner whose policy appears in an example.
+Bundles are aids for reasoning about policies, not legal advice; the official policy text always
+controls. The repository ships no real policy: tests use an invented sample.
 
 ## License
 

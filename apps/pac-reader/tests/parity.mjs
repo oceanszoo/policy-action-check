@@ -11,8 +11,8 @@ import { citationJudge, summaryJudge, policyText, policySummary, exceptionSummar
 const here = dirname(fileURLToPath(import.meta.url));
 const repo = resolve(here, "../../..");
 const defaults = [
-  "plugins/policy-action-check/examples/anthropic-aup",
-  ...["v1_3-built", "v1_3-seeded"].map((b) => `apps/pac-reader/tests/fixtures/bundles/${b}`),
+  "tests/fixtures/sample-bundle",
+  "apps/pac-reader/tests/fixtures/bundles/v1_3-sample",
 ].map((p) => join(repo, p)).filter((p) => existsSync(join(p, "generator.json")));
 const bundles = process.argv.length > 2 ? process.argv.slice(2) : defaults;
 
