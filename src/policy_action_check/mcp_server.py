@@ -39,7 +39,7 @@ TOOLS = [
      "inputSchema": {"type": "object", "properties": {}}},
     {"name": "fit", "description": "Which case-map category an action code fits.",
      "inputSchema": {"type": "object", "properties": {"code": CODE}, "required": ["code"]}},
-    {"name": "bundle_info", "description": "The bundle's manifest, self-exam badge, policy, and validation result.",
+    {"name": "bundle_info", "description": "The bundle's manifest (with its self-exam badge), digest check, policy, and validation result.",
      "inputSchema": {"type": "object", "properties": {}}},
 ]
 
@@ -77,7 +77,8 @@ class Server:
             sp = self.space()
             manifest = engine._read_json(self.root / "bundle.json", {})
             return {"folder": str(self.root), "policy": sp.generator.get("policy"), "manifest": manifest,
-                    "exam_badge": engine.exam_badge(self.root), "validate_errors": engine.validate(self.root)}
+                    "verification": engine.verify_manifest(manifest, engine._bundle_bytes(self.root)) if manifest else None,
+                    "validate_errors": engine.validate(self.root)}
         raise KeyError(name)
 
     def handle(self, msg: dict) -> dict | None:

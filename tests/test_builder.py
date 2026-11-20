@@ -181,3 +181,43 @@ def test_cli_build_with_replay(tmp_path, capsys):
                  "--provider", "replay", "--replay", str(tmp_path / "replies.json")])
     out = json.loads(capsys.readouterr().out)
     assert code == 0 and out["ok"]
+
+
+def test_build_from_verify_reuses_existing_files(tmp_path):
+    space = Path(shutil.copytree(SAMPLE, tmp_path / "space"))
+    terms = sample_terms()
+    (space / "work").mkdir()
+    (space / "work" / "terms.json").write_text(json.dumps(terms))
+    (tmp_path / "policy.md").write_text(policy_text(terms))
+    provider = Scripted([{"files": {}, "notes": "nothing to change"}])
+    out = builder.Builder(space, provider, policy=str(tmp_path / "policy.md"), log=lambda m: None).build("verify")
+    assert out["ok"], out
+    assert [s["stage"] for s in out["stages"]] == ["verify"] and len(provider.calls) == 1
+    assert "pac exam (current result)" in provider.calls[0][1]
+
+
+def test_policy_from_a_url(tmp_path):
+    import threading
+    from http.server import BaseHTTPRequestHandler, HTTPServer
+
+    page = b"<html><head><style>x{}</style></head><body><h1>Terms</h1><p>Do not resell access.</p></body></html>"
+
+    class Page(BaseHTTPRequestHandler):
+        def do_GET(self):
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.end_headers()
+            self.wfile.write(page)
+
+        def log_message(self, *args):
+            pass
+
+    httpd = HTTPServer(("127.0.0.1", 0), Page)
+    threading.Thread(target=httpd.serve_forever, daemon=True).start()
+    try:
+        text, note = builder.read_source(f"http://127.0.0.1:{httpd.server_port}/terms", 10_000)
+    finally:
+        httpd.shutdown()
+    assert note is None and "# Terms" in text and "Do not resell access." in text and "x{}" not in text
+    short, note = builder.read_source(str(tmp_path / "p.md") if (tmp_path / "p.md").write_text("a\n" * 50) else "", 20)
+    assert note and short.count("a") < 50

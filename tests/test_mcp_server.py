@@ -59,3 +59,15 @@ def test_stdio_round_trip():
     replies = [json.loads(line) for line in proc.stdout.splitlines()]
     assert [r["id"] for r in replies] == [1, 2]
     assert replies[1]["result"]["isError"] is False
+
+
+def test_fit_and_bundle_info():
+    server = Server(SAMPLE)
+    fit = rpc(server, "tools/call", {"name": "fit", "arguments": {"code": "act=biz pur=cyber auth=own"}})["result"]
+    assert not fit["isError"]
+    want = engine.fit_detail(engine.parse_code("act=biz pur=cyber auth=own", engine.Space(SAMPLE))["features"],
+                             engine.Space(SAMPLE), None)
+    assert fit["structuredContent"] == json.loads(json.dumps(want))
+    info = rpc(server, "tools/call", {"name": "bundle_info", "arguments": {}})["result"]["structuredContent"]
+    assert info["validate_errors"] == [] and info["manifest"]["format"] == "pac-bundle"
+    assert info["manifest"]["exam"]["passed"] and info["verification"]["digests_ok"]

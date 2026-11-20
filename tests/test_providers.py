@@ -16,7 +16,7 @@ class Recorder(BaseHTTPRequestHandler):
 
     def do_POST(self):
         body = json.loads(self.rfile.read(int(self.headers["Content-Length"])))
-        type(self).seen.append({"path": self.path, "headers": dict(self.headers), "body": body})
+        type(self).seen.append({"path": self.path, "headers": {k.lower(): v for k, v in self.headers.items()}, "body": body})
         status, payload = type(self).replies.pop(0)
         data = json.dumps(payload).encode()
         self.send_response(status)
@@ -48,7 +48,7 @@ def test_openai_compatible_request_and_reply(server):
     assert p.complete("sys", "usr") == "hello"
     req = rec.seen[0]
     assert req["path"] == "/api/v1/chat/completions"
-    assert req["headers"]["Authorization"] == "Bearer k"
+    assert req["headers"]["authorization"] == "Bearer k"
     assert req["body"] == {"model": "m", "max_tokens": 99, "messages": [
         {"role": "system", "content": "sys"}, {"role": "user", "content": "usr"}]}
 
@@ -70,7 +70,7 @@ def test_retries_rate_limits_then_succeeds(server):
     rec.replies = [(429, {"error": "slow down"}), (200, {"choices": [{"message": {"content": "ok"}}]})]
     p = Provider(name="ollama", wire="openai", base_url=url + "/v1", model="m", retries=2)
     assert p.complete("s", "u") == "ok" and len(rec.seen) == 2
-    assert "Authorization" not in rec.seen[0]["headers"]
+    assert "authorization" not in rec.seen[0]["headers"]
 
 
 def test_client_errors_are_not_retried(server):
