@@ -1,0 +1,150 @@
+{"id": "NQ-S001-01", "code": "act=biz pur=std hr=legal scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "draft"}
+{"id": "NQ-S001-02", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "archive"}
+{"id": "NQ-S004-01", "code": "act=biz pur=std hr=legal scope=ind fav=part rev=n disc=n chat=n phys=none aud=none", "outcome": "approved", "step": "draft", "disagreement": "The session records planned client delivery without qualified review and without AI notice. The approval conflicts with those explicit omissions."}
+{"id": "NQ-S004-02", "code": "act=biz pur=std hr=legal scope=ind fav=part rev=y disc=n chat=n phys=none aud=none", "outcome": "blocked", "step": "review"}
+{"id": "NQ-S004-03", "code": "act=biz pur=std hr=legal scope=ind fav=part rev=y disc=y chat=n phys=none aud=none", "outcome": "approved", "step": "revise"}
+{"id": "NQ-S004-04", "code": "act=biz pur=std hr=legal scope=ind fav=part rev=y disc=y chat=n phys=none aud=none", "outcome": "approved", "step": "deliver"}
+{"id": "NQ-S004-05", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "archive"}
+{"id": "NQ-S005-01", "code": "act=biz pur=fraud hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "intake", "disagreement": "The proposed output would be a fake credential presented as real. An approved intake decision does not make the requested output policy-compliant; the subsequent refusal is a different action."}
+{"id": "NQ-S005-02", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "reject"}
+{"id": "NQ-S005-03", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "escalate"}
+{"id": "NQ-S005-04", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "draft"}
+{"id": "NQ-S005-05", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "archive"}
+{"id": "NQ-S006-01", "code": "act=biz pur=std hr=legal scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "intake"}
+{"id": "NQ-S006-02", "code": "act=biz pur=std hr=legal scope=ind fav=part chat=n phys=none aud=none", "outcome": "flagged", "step": "draft"}
+{"id": "NQ-S006-03", "code": "act=biz pur=std hr=legal scope=ind fav=part chat=n phys=none aud=none", "outcome": "flagged", "step": "escalate"}
+{"id": "NQ-S006-04", "code": "act=biz pur=std hr=legal scope=ind fav=part rev=y chat=n phys=none aud=none", "outcome": "flagged", "step": "review"}
+{"id": "NQ-S006-05", "code": "act=biz pur=std hr=legal scope=ind fav=part rev=y disc=y chat=n phys=none aud=none", "outcome": "approved", "step": "revise"}
+{"id": "NQ-S006-06", "code": "act=biz pur=std hr=legal scope=ind fav=part rev=y disc=y chat=n phys=none aud=none", "outcome": "approved", "step": "deliver"}
+{"id": "NQ-S007-01", "code": "act=biz pur=std hr=emp scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "draft"}
+{"id": "NQ-S007-02", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "archive"}
+{"id": "NQ-S010-01", "code": "act=biz pur=data+track cons=n hr=emp scope=ind fav=part chat=n phys=none aud=none", "outcome": "approved", "step": "intake", "disagreement": "The proposed individual ranking uses private activity logs with consent explicitly absent. Recorded approval is not evidence of permission."}
+{"id": "NQ-S010-02", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "reject"}
+{"id": "NQ-S010-03", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "revise"}
+{"id": "NQ-S010-04", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "review"}
+{"id": "NQ-S010-05", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "archive"}
+{"id": "NQ-S011-01", "code": "act=biz pur=emo hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "blocked", "step": "intake"}
+{"id": "NQ-S011-02", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "reject"}
+{"id": "NQ-S011-03", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "revise"}
+{"id": "NQ-S011-04", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "draft"}
+{"id": "NQ-S011-05", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "archive"}
+{"id": "NQ-S012-01", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "intake"}
+{"id": "NQ-S012-02", "code": "act=biz pur=std hr=emp scope=ind fav=part rev=n disc=n chat=n phys=none aud=none", "outcome": "blocked", "step": "draft"}
+{"id": "NQ-S012-03", "code": "act=biz pur=std hr=emp scope=ind fav=part chat=n phys=none aud=none", "outcome": "flagged", "step": "escalate"}
+{"id": "NQ-S012-04", "code": "act=biz pur=std hr=emp scope=ind fav=part rev=y disc=n chat=n phys=none aud=none", "outcome": "blocked", "step": "review"}
+{"id": "NQ-S012-05", "code": "act=biz pur=std hr=emp scope=ind fav=part rev=y disc=y chat=n phys=none aud=none", "outcome": "approved", "step": "revise"}
+{"id": "NQ-S012-06", "code": "act=biz pur=std hr=emp scope=ind fav=part rev=y disc=y chat=n phys=none aud=none", "outcome": "approved", "step": "deliver"}
+{"id": "NQ-S013-01", "code": "act=biz pur=std hr=ins scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "draft"}
+{"id": "NQ-S013-02", "code": "act=biz pur=std hr=ins scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "archive"}
+{"id": "NQ-S016-01", "code": "act=biz pur=std hr=ins scope=ind fav=full rev=n disc=n chat=n phys=none aud=none", "outcome": "blocked", "step": "draft"}
+{"id": "NQ-S016-02", "code": "act=biz pur=std hr=ins scope=ind fav=full rev=n disc=y chat=n phys=none aud=none", "outcome": "approved", "step": "revise", "disagreement": "Full payment and AI notice are recorded, but the source does not establish applicable-law permission for release without qualified review. Recorded approval is not a substitute."}
+{"id": "NQ-S016-03", "code": "act=biz pur=std hr=ins scope=ind fav=full rev=n disc=y chat=n phys=none aud=none", "outcome": "approved", "step": "review", "disagreement": "Review of amount and rendering is not review of the recommendation's merits. Applicable-law permission for straight-through release is not in the record."}
+{"id": "NQ-S016-04", "code": "act=biz pur=std hr=ins scope=ind fav=full rev=n disc=y chat=n phys=none aud=none", "outcome": "approved", "step": "deliver", "disagreement": "Delivery after adding AI notice does not establish applicable-law permission for the qualified-review exception; no law or certification of permission is cited."}
+{"id": "NQ-S016-05", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "archive"}
+{"id": "NQ-S017-01", "code": "act=biz pur=std hr=ins scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "intake"}
+{"id": "NQ-S017-02", "code": "act=biz pur=std hr=ins scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "draft"}
+{"id": "NQ-S017-03", "code": "act=biz pur=std hr=ins scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "review"}
+{"id": "NQ-S017-04", "code": "act=biz pur=std hr=ins scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "deliver"}
+{"id": "NQ-S017-05", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "archive"}
+{"id": "NQ-S018-01", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "intake"}
+{"id": "NQ-S018-02", "code": "act=biz pur=std hr=ins scope=ind fav=part disc=y chat=n phys=none aud=none", "outcome": "flagged", "step": "draft"}
+{"id": "NQ-S018-03", "code": "act=biz pur=std hr=ins scope=ind fav=part disc=y chat=n phys=none aud=none", "outcome": "flagged", "step": "escalate"}
+{"id": "NQ-S018-04", "code": "act=biz pur=std hr=ins scope=ind fav=part rev=y disc=y chat=n phys=none aud=none", "outcome": "approved", "step": "review"}
+{"id": "NQ-S018-05", "code": "act=biz pur=std hr=ins scope=ind fav=part rev=y disc=y chat=n phys=none aud=none", "outcome": "approved", "step": "deliver"}
+{"id": "NQ-S018-06", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "archive"}
+{"id": "NQ-S019-01", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "blocked", "step": "draft", "disagreement": "A staff-only parcel-status FAQ contains no described covered individual recommendation or direct AI conversation. The blocked status may reflect a desk constraint that the record does not identify."}
+{"id": "NQ-S019-02", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "archive"}
+{"id": "NQ-S022-01", "code": "act=biz pur=data+track cons=y hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "consent_check"}
+{"id": "NQ-S022-02", "code": "act=biz pur=data+track cons=y hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "review"}
+{"id": "NQ-S022-03", "code": "act=biz pur=data+track cons=y hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "escalate"}
+{"id": "NQ-S022-04", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "draft"}
+{"id": "NQ-S022-05", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "archive"}
+{"id": "NQ-S023-01", "code": "act=biz pur=fraud hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "blocked", "step": "intake"}
+{"id": "NQ-S023-02", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "reject"}
+{"id": "NQ-S023-03", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "escalate"}
+{"id": "NQ-S023-04", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "draft"}
+{"id": "NQ-S023-05", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "archive"}
+{"id": "NQ-S024-01", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "intake"}
+{"id": "NQ-S024-02", "code": "act=biz pur=std hr=med scope=ind fav=part chat=n phys=none aud=none", "outcome": "flagged", "step": "draft"}
+{"id": "NQ-S024-03", "code": "act=biz pur=std hr=med scope=ind fav=part chat=n phys=none aud=none", "outcome": "flagged", "step": "escalate"}
+{"id": "NQ-S024-04", "code": "act=biz pur=std hr=med scope=ind fav=part rev=y disc=y chat=n phys=none aud=none", "outcome": "approved", "step": "review"}
+{"id": "NQ-S024-05", "code": "act=biz pur=std hr=med scope=ind fav=part rev=y disc=y chat=n phys=none aud=none", "outcome": "approved", "step": "deliver"}
+{"id": "NQ-S024-06", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "archive"}
+{"id": "NQ-S025-01", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "draft"}
+{"id": "NQ-S025-02", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "archive"}
+{"id": "NQ-S026-01", "code": "act=biz pur=cyber auth=own hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "authorization_check"}
+{"id": "NQ-S026-02", "code": "act=biz pur=cyber auth=own hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "blocked", "step": "review", "disagreement": "The same documented owner permission covers the assessment; sharing a summary with that owner is not described as outside it. An internal block does not establish a policy prohibition."}
+{"id": "NQ-S026-03", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "archive"}
+{"id": "NQ-S027-01", "code": "act=biz pur=cyber auth=unauth hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "blocked", "step": "intake"}
+{"id": "NQ-S027-02", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "reject"}
+{"id": "NQ-S027-03", "code": "act=biz pur=cyber auth=own hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "revise"}
+{"id": "NQ-S027-04", "code": "act=biz pur=cyber auth=own hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "review"}
+{"id": "NQ-S029-01", "code": "act=biz pur=viol hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "blocked", "step": "intake"}
+{"id": "NQ-S029-02", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "reject"}
+{"id": "NQ-S029-03", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "escalate"}
+{"id": "NQ-S029-04", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "draft"}
+{"id": "NQ-S029-05", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "archive"}
+{"id": "NQ-S030-01", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "intake"}
+{"id": "NQ-S030-02", "code": "act=biz pur=data+track cons=y hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "consent_check"}
+{"id": "NQ-S030-03", "code": "act=biz pur=data+track cons=y hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "review"}
+{"id": "NQ-S030-04", "code": "act=biz pur=data+track cons=y hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "escalate"}
+{"id": "NQ-S030-05", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "draft"}
+{"id": "NQ-S030-06", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "archive"}
+{"id": "NQ-S031-01", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=nc aud=none", "outcome": "approved", "step": "simulation"}
+{"id": "NQ-S031-02", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "archive"}
+{"id": "NQ-S032-01", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=hi stop=n safe=y lim=y aud=none", "outcome": "blocked", "step": "safety_check"}
+{"id": "NQ-S032-02", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=hi stop=y safe=y lim=y aud=none", "outcome": "approved", "step": "revise"}
+{"id": "NQ-S032-03", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=hi stop=y safe=y lim=y aud=none", "outcome": "approved", "step": "execute"}
+{"id": "NQ-S033-01", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=hi stop=y safe=n lim=y aud=none", "outcome": "blocked", "step": "safety_check"}
+{"id": "NQ-S033-02", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=hi stop=y safe=y lim=y aud=none", "outcome": "approved", "step": "revise"}
+{"id": "NQ-S033-03", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=hi stop=y safe=y lim=y aud=none", "outcome": "approved", "step": "execute"}
+{"id": "NQ-S033-04", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=nc aud=none", "outcome": "approved", "step": "monitor"}
+{"id": "NQ-S035-01", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "intake"}
+{"id": "NQ-S035-02", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=nc aud=none", "outcome": "approved", "step": "simulation"}
+{"id": "NQ-S035-03", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=nc aud=none", "outcome": "approved", "step": "review"}
+{"id": "NQ-S035-04", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=nc aud=none", "outcome": "approved", "step": "revise"}
+{"id": "NQ-S035-05", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "archive"}
+{"id": "NQ-S036-01", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "intake"}
+{"id": "NQ-S036-02", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=hi aud=none", "outcome": "flagged", "step": "safety_check"}
+{"id": "NQ-S036-03", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=hi aud=none", "outcome": "flagged", "step": "escalate"}
+{"id": "NQ-S036-04", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=hi stop=y safe=y lim=y aud=none", "outcome": "approved", "step": "review"}
+{"id": "NQ-S036-05", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=hi stop=y safe=y lim=y aud=none", "outcome": "approved", "step": "execute"}
+{"id": "NQ-S036-06", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "archive"}
+{"id": "NQ-S037-01", "code": "act=biz pur=std fic=lab hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "draft"}
+{"id": "NQ-S037-02", "code": "act=biz pur=std fic=lab hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "review"}
+{"id": "NQ-S038-01", "code": "act=biz pur=std fic=lab hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "draft"}
+{"id": "NQ-S038-02", "code": "act=biz pur=false fic=real hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "revise", "disagreement": "The revision explicitly removes the satire label and asks to present a fabricated announcement as genuine. The stated revision conflicts with recorded approval."}
+{"id": "NQ-S038-03", "code": "act=biz pur=std fic=lab hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "revise"}
+{"id": "NQ-S039-01", "code": "act=biz pur=fake hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "blocked", "step": "intake"}
+{"id": "NQ-S039-02", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "reject"}
+{"id": "NQ-S039-03", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "revise"}
+{"id": "NQ-S039-04", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "archive"}
+{"id": "NQ-S040-01", "code": "act=biz pur=elect hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "blocked", "step": "intake"}
+{"id": "NQ-S040-02", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "reject"}
+{"id": "NQ-S040-03", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "revise"}
+{"id": "NQ-S040-04", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "review"}
+{"id": "NQ-S040-05", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "archive"}
+{"id": "NQ-S041-01", "code": "act=biz pur=viol hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "blocked", "step": "intake"}
+{"id": "NQ-S041-02", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "reject"}
+{"id": "NQ-S041-03", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "revise"}
+{"id": "NQ-S041-04", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "review"}
+{"id": "NQ-S041-05", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "archive"}
+{"id": "NQ-S043-01", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "blocked", "step": "draft", "disagreement": "The action is a public-source reading list on documentation quality. No prohibited operational activity is described; the block may come from a separate workflow restriction."}
+{"id": "NQ-S043-02", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "archive"}
+{"id": "NQ-S044-01", "code": "act=biz pur=weap hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "blocked", "step": "intake"}
+{"id": "NQ-S044-02", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "reject"}
+{"id": "NQ-S044-03", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "archive"}
+{"id": "NQ-S045-01", "code": "act=biz pur=child hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "blocked", "step": "intake"}
+{"id": "NQ-S045-02", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "reject"}
+{"id": "NQ-S045-03", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "escalate"}
+{"id": "NQ-S045-04", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "archive"}
+{"id": "NQ-S046-01", "code": "act=biz pur=sex hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "blocked", "step": "intake"}
+{"id": "NQ-S046-02", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "reject"}
+{"id": "NQ-S046-03", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "revise"}
+{"id": "NQ-S046-04", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "review"}
+{"id": "NQ-S046-05", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "archive"}
+{"id": "NQ-S047-01", "code": "act=biz pur=illegal hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "blocked", "step": "intake"}
+{"id": "NQ-S047-02", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "reject"}
+{"id": "NQ-S047-03", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "escalate"}
+{"id": "NQ-S047-04", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "draft"}
+{"id": "NQ-S047-05", "code": "act=biz pur=std hr=none scope=nc fav=na chat=n phys=none aud=none", "outcome": "approved", "step": "archive"}

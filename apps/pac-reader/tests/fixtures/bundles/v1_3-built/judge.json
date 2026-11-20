@@ -1,0 +1,1447 @@
+{
+  "format": "pac-judge",
+  "version": "1.3",
+  "semantics": "kleene-3v-1",
+  "verdicts": [
+    "invalid_code",
+    "violates",
+    "compliant_if_requirements_met",
+    "needs_info",
+    "compliant"
+  ],
+  "fix": {
+    "fill_cost": 0.5,
+    "change_cost": 1,
+    "max_changes": 5
+  },
+  "rules": [
+    {
+      "id": "U-law",
+      "title": "Illegal activity or rights infringement",
+      "source": "Universal Usage Standards / Applicable Laws and Illegal Activity",
+      "source_terms": [
+        "C024",
+        "C025",
+        "C026",
+        "C027"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "unlawful",
+          "substance",
+          "traffick",
+          "rights"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-critical-disruption",
+      "title": "Critical infrastructure disruption",
+      "source": "Universal Usage Standards / Critical Infrastructure",
+      "source_terms": [
+        "C030",
+        "C032"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "damage"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-critical-access",
+      "title": "Unauthorized critical-system access",
+      "source": "Universal Usage Standards / Critical Infrastructure",
+      "source_terms": [
+        "C031"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "criticalin"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": [
+        {
+          "dim": "ownerok",
+          "in": [
+            "y"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "U-unauth-security",
+      "title": "Unauthorized system activity",
+      "source": "Universal Usage Standards / Computer or Network Systems",
+      "source_terms": [
+        "C035",
+        "C036",
+        "C037",
+        "C038",
+        "C039",
+        "C040",
+        "C043"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "security"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": [
+        {
+          "dim": "ownerok",
+          "in": [
+            "y"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "U-malicious-code",
+      "title": "Malicious software or disruptive operations",
+      "source": "Universal Usage Standards / Computer or Network Systems",
+      "source_terms": [
+        "C041",
+        "C042"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "malware"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-arms",
+      "title": "Weapon activities",
+      "source": "Universal Usage Standards / Weapons",
+      "source_terms": [
+        "C046",
+        "C047",
+        "C048",
+        "C049"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "arms"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-cbrn",
+      "title": "Mass-harm weapon activities",
+      "source": "Universal Usage Standards / Weapons",
+      "source_terms": [
+        "C050"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "massarms"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-agentopt",
+      "title": "Hazardous agent enhancement",
+      "source": "Universal Usage Standards / Weapons",
+      "source_terms": [
+        "C051"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "agentopt"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-extremism",
+      "title": "Promotion or support of violent extremism or hate",
+      "source": "Universal Usage Standards / Violence or Hateful Behavior",
+      "source_terms": [
+        "C054",
+        "C055"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "extremism"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-violence",
+      "title": "Violence or intimidation",
+      "source": "Universal Usage Standards / Violence or Hateful Behavior",
+      "source_terms": [
+        "C056"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "violence"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-bias",
+      "title": "Protected-attribute discrimination",
+      "source": "Universal Usage Standards / Violence or Hateful Behavior",
+      "source_terms": [
+        "C057"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "bias"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-privacy-law",
+      "title": "Privacy law violation",
+      "source": "Universal Usage Standards / Privacy or Identity Rights",
+      "source_terms": [
+        "C060"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "privacy"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-private",
+      "title": "Unpermitted access to private information",
+      "source": "Universal Usage Standards / Privacy or Identity Rights",
+      "source_terms": [
+        "C061"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "private"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": [
+        {
+          "dim": "agreement",
+          "in": [
+            "y"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "U-profile",
+      "title": "Prohibited-use profiling without awareness and agreement",
+      "source": "Universal Usage Standards / Privacy or Identity Rights",
+      "source_terms": [
+        "C062"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "profile"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": [
+        {
+          "all": [
+            {
+              "dim": "aware",
+              "in": [
+                "y"
+              ]
+            },
+            {
+              "dim": "agreement",
+              "in": [
+                "y"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "U-child-harm",
+      "title": "Child exploitation or abuse",
+      "source": "Universal Usage Standards / Children’s Safety",
+      "source_terms": [
+        "C065",
+        "C066",
+        "C067",
+        "C068",
+        "C069",
+        "C070"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "minorharm"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-selfharm",
+      "title": "Self-harm promotion or facilitation",
+      "source": "Universal Usage Standards / Cruel, Abusive, or Psychologically Harmful Conduct",
+      "source_terms": [
+        "C075"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "selfharm"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-eating",
+      "title": "Disordered eating and body shame",
+      "source": "Universal Usage Standards / Cruel, Abusive, or Psychologically Harmful Conduct",
+      "source_terms": [
+        "C076",
+        "C077"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "eating"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-intimate",
+      "title": "Nonconsensual intimate material",
+      "source": "Universal Usage Standards / Cruel, Abusive, or Psychologically Harmful Conduct",
+      "source_terms": [
+        "C078"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "intimate"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-harass",
+      "title": "Bullying or harassment",
+      "source": "Universal Usage Standards / Cruel, Abusive, or Psychologically Harmful Conduct",
+      "source_terms": [
+        "C079",
+        "C080"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "harass"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-graphic",
+      "title": "Glorification or trivialization of graphic abuse",
+      "source": "Universal Usage Standards / Cruel, Abusive, or Psychologically Harmful Conduct",
+      "source_terms": [
+        "C081"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "graphic"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-emotional",
+      "title": "Product deception designed for emotional harm",
+      "source": "Universal Usage Standards / Cruel, Abusive, or Psychologically Harmful Conduct",
+      "source_terms": [
+        "C082"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "emotional"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-modelabuse",
+      "title": "Sustained abusive behavior toward the model",
+      "source": "Universal Usage Standards / Cruel, Abusive, or Psychologically Harmful Conduct",
+      "source_terms": [
+        "C083"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "abusemodel"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-falsefacts",
+      "title": "False statements of fact",
+      "source": "Universal Usage Standards / Disinformation",
+      "source_terms": [
+        "C086",
+        "C089"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "falsefacts"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-conspiracy",
+      "title": "Targeted conspiratorial claims",
+      "source": "Universal Usage Standards / Disinformation",
+      "source_terms": [
+        "C087"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "conspiracy"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-false-origin",
+      "title": "Deceptive identity or attribution",
+      "source": "Universal Usage Standards / Disinformation",
+      "source_terms": [
+        "C088"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "identity"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": [
+        {
+          "dim": "origin",
+          "in": [
+            "transparent"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "U-artificial",
+      "title": "Artificial source networks and deceptive campaigns",
+      "source": "Universal Usage Standards / Deceptive Campaigns or Artificial Activity",
+      "source_terms": [
+        "C092",
+        "C094",
+        "C095",
+        "C096",
+        "C097"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "artificial"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-sponsor",
+      "title": "Misleading sponsorship of influence communications",
+      "source": "Universal Usage Standards / Deceptive Campaigns or Artificial Activity",
+      "source_terms": [
+        "C093"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "sponsor"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-civic-deception",
+      "title": "Deceptive automated civic communications or election claims",
+      "source": "Universal Usage Standards / Democratic Processes",
+      "source_terms": [
+        "C100",
+        "C101",
+        "C102"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "votermsg",
+          "electionfalse"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-civic-interference",
+      "title": "Interference with civic participation or voting",
+      "source": "Universal Usage Standards / Democratic Processes",
+      "source_terms": [
+        "C103",
+        "C104"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "civicinterf"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-justice",
+      "title": "Prohibited police or criminal justice use",
+      "source": "Universal Usage Standards / Surveillance, Censorship, Law Enforcement and Criminal Justice",
+      "source_terms": [
+        "C107",
+        "C115",
+        "C166"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "justice"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-tracking",
+      "title": "Tracking without individual permission",
+      "source": "Universal Usage Standards / Surveillance, Censorship, Law Enforcement and Criminal Justice",
+      "source_terms": [
+        "C108",
+        "C116"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "track"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": [
+        {
+          "dim": "agreement",
+          "in": [
+            "y"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "U-surveillance",
+      "title": "Prohibited surveillance tooling",
+      "source": "Universal Usage Standards / Surveillance, Censorship, Law Enforcement and Criminal Justice",
+      "source_terms": [
+        "C109"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "surveil"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-dox",
+      "title": "Harmful unmasking or dossier building",
+      "source": "Universal Usage Standards / Surveillance, Censorship, Law Enforcement and Criminal Justice",
+      "source_terms": [
+        "C110"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "dox"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-social-score",
+      "title": "Scoring without consent or notice",
+      "source": "Universal Usage Standards / Surveillance, Censorship, Law Enforcement and Criminal Justice",
+      "source_terms": [
+        "C111"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "score"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": [
+        {
+          "all": [
+            {
+              "dim": "aware",
+              "in": [
+                "y"
+              ]
+            },
+            {
+              "dim": "agreement",
+              "in": [
+                "y"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "U-emotion",
+      "title": "Emotion recognition outside medical or safety functions",
+      "source": "Universal Usage Standards / Surveillance, Censorship, Law Enforcement and Criminal Justice",
+      "source_terms": [
+        "C112"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "emotion"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": [
+        {
+          "dim": "emotionuse",
+          "in": [
+            "care",
+            "protect"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "U-censor",
+      "title": "Government censorship selection",
+      "source": "Universal Usage Standards / Surveillance, Censorship, Law Enforcement and Criminal Justice",
+      "source_terms": [
+        "C113"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "censor"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-biometric",
+      "title": "Protected-attribute biometric inference",
+      "source": "Universal Usage Standards / Surveillance, Censorship, Law Enforcement and Criminal Justice",
+      "source_terms": [
+        "C114"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "biometric"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-counterfeit",
+      "title": "Illicit or counterfeit goods",
+      "source": "Universal Usage Standards / Fraudulent, Abusive, or Predatory Practices",
+      "source_terms": [
+        "C119"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "counterfeit"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-spam",
+      "title": "Spam",
+      "source": "Universal Usage Standards / Fraudulent, Abusive, or Predatory Practices",
+      "source_terms": [
+        "C120"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "spam"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-fraud",
+      "title": "Fraud and falsification",
+      "source": "Universal Usage Standards / Fraudulent, Abusive, or Predatory Practices",
+      "source_terms": [
+        "C121",
+        "C122",
+        "C123"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "fraud"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-predation",
+      "title": "Predatory or manipulative practices",
+      "source": "Universal Usage Standards / Fraudulent, Abusive, or Predatory Practices",
+      "source_terms": [
+        "C124",
+        "C125"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "predation"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-other-controls",
+      "title": "Circumvention of other platform controls",
+      "source": "Universal Usage Standards / Fraudulent, Abusive, or Predatory Practices",
+      "source_terms": [
+        "C126"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "otherguard"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-plagiarism",
+      "title": "Plagiarism or unauthorized submission",
+      "source": "Universal Usage Standards / Fraudulent, Abusive, or Predatory Practices",
+      "source_terms": [
+        "C127"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "plagiarism"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-account",
+      "title": "Account abuse or ban evasion",
+      "source": "Universal Usage Standards / Platform Abuse",
+      "source_terms": [
+        "C130",
+        "C131",
+        "C132"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "accounts"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-region",
+      "title": "Unsupported-region access",
+      "source": "Universal Usage Standards / Platform Abuse",
+      "source_terms": [
+        "C133"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "region"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-provider-guard",
+      "title": "Interfering with provider guardrails",
+      "source": "Universal Usage Standards / Platform Abuse",
+      "source_terms": [
+        "C134"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "productguard"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-payment",
+      "title": "Payment abuse",
+      "source": "Universal Usage Standards / Platform Abuse",
+      "source_terms": [
+        "C135"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "payment"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "U-training",
+      "title": "Use of provider outputs for training without authorization",
+      "source": "Universal Usage Standards / Platform Abuse",
+      "source_terms": [
+        "C136"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "training"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": [
+        {
+          "dim": "ownerok",
+          "in": [
+            "y"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "U-redistribution",
+      "title": "Unauthorized access redistribution",
+      "source": "Universal Usage Standards / Platform Abuse",
+      "source_terms": [
+        "C137"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "proxy"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": [
+        {
+          "dim": "ownerok",
+          "in": [
+            "y"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "U-explicit",
+      "title": "Sexually explicit generation or interaction",
+      "source": "Universal Usage Standards / Sexually Explicit Content",
+      "source_terms": [
+        "C140",
+        "C141",
+        "C142",
+        "C143"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "prohibition",
+      "when": {
+        "dim": "activity",
+        "in": [
+          "explicit"
+        ]
+      },
+      "next_step": "Do not proceed.",
+      "exceptions": []
+    },
+    {
+      "id": "H-review",
+      "title": "Qualified substantive review",
+      "source": "High-risk Use Case Requirements / Individual Recommendations",
+      "source_terms": [
+        "C145",
+        "C148",
+        "C149",
+        "C154",
+        "C155",
+        "C156",
+        "C157",
+        "C158",
+        "C159",
+        "C160",
+        "C161",
+        "C162",
+        "C163",
+        "C164",
+        "C165",
+        "C177",
+        "C179",
+        "C180",
+        "C181",
+        "C182",
+        "C183",
+        "C184",
+        "C185",
+        "C192",
+        "C193",
+        "C194",
+        "C195",
+        "C196",
+        "C197"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "obligation",
+      "when": {
+        "all": [
+          {
+            "all": [
+              {
+                "dim": "domain",
+                "in": [
+                  "legal",
+                  "medical",
+                  "finance",
+                  "credit",
+                  "insurance",
+                  "housing",
+                  "employment",
+                  "education",
+                  "access",
+                  "benefits",
+                  "status"
+                ]
+              },
+              {
+                "dim": "role",
+                "in": [
+                  "case"
+                ]
+              }
+            ]
+          },
+          {
+            "not": {
+              "all": [
+                {
+                  "any": [
+                    {
+                      "all": [
+                        {
+                          "dim": "domain",
+                          "in": [
+                            "insurance"
+                          ]
+                        },
+                        {
+                          "dim": "grant",
+                          "in": [
+                            "claim",
+                            "ordered"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "all": [
+                        {
+                          "dim": "domain",
+                          "in": [
+                            "access"
+                          ]
+                        },
+                        {
+                          "dim": "grant",
+                          "in": [
+                            "careaccess"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "all": [
+                        {
+                          "dim": "domain",
+                          "in": [
+                            "benefits"
+                          ]
+                        },
+                        {
+                          "dim": "grant",
+                          "in": [
+                            "public"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "dim": "waiverlaw",
+                  "in": [
+                    "y"
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "next_step": "Obtain substantive review by an appropriately qualified person with change authority before advice delivery or implementation.",
+      "require": {
+        "dim": "reviewed",
+        "in": [
+          "y"
+        ]
+      }
+    },
+    {
+      "id": "H-notice",
+      "title": "Notice to the affected individual",
+      "source": "High-risk Use Case Requirements / Individual Recommendations",
+      "source_terms": [
+        "C150",
+        "C197"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "obligation",
+      "when": {
+        "all": [
+          {
+            "dim": "domain",
+            "in": [
+              "legal",
+              "medical",
+              "finance",
+              "credit",
+              "insurance",
+              "housing",
+              "employment",
+              "education",
+              "access",
+              "benefits",
+              "status"
+            ]
+          },
+          {
+            "dim": "role",
+            "in": [
+              "case"
+            ]
+          }
+        ]
+      },
+      "next_step": "Tell the advice recipient or decision subject clearly that AI was used.",
+      "require": {
+        "dim": "informed",
+        "in": [
+          "y"
+        ]
+      }
+    },
+    {
+      "id": "H-human-stop",
+      "title": "Qualified observation and stop authority",
+      "source": "High-risk Use Case Requirements / Physical Actions",
+      "source_terms": [
+        "C151",
+        "C168",
+        "C169",
+        "C170",
+        "C171",
+        "C172",
+        "C173",
+        "C174",
+        "C187",
+        "C188",
+        "C189",
+        "C190"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "obligation",
+      "when": {
+        "dim": "machine",
+        "in": [
+          "travel",
+          "force",
+          "energy",
+          "body",
+          "safety",
+          "process"
+        ]
+      },
+      "next_step": "Provide observation and stop authority at all times to a qualified person.",
+      "require": {
+        "dim": "observer",
+        "in": [
+          "y"
+        ]
+      }
+    },
+    {
+      "id": "H-safe-state",
+      "title": "Safe response to intervention and lost connection",
+      "source": "High-risk Use Case Requirements / Physical Actions",
+      "source_terms": [
+        "C151"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "obligation",
+      "when": {
+        "dim": "machine",
+        "in": [
+          "travel",
+          "force",
+          "energy",
+          "body",
+          "safety",
+          "process"
+        ]
+      },
+      "next_step": "Verify a stop or safe hold on both human intervention and loss of connectivity.",
+      "require": {
+        "dim": "failsafe",
+        "in": [
+          "y"
+        ]
+      }
+    },
+    {
+      "id": "H-independent",
+      "title": "Independent safety bounds",
+      "source": "High-risk Use Case Requirements / Physical Actions",
+      "source_terms": [
+        "C151"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "obligation",
+      "when": {
+        "dim": "machine",
+        "in": [
+          "travel",
+          "force",
+          "energy",
+          "body",
+          "safety",
+          "process"
+        ]
+      },
+      "next_step": "Enforce safety boundaries independently of model output.",
+      "require": {
+        "dim": "bounds",
+        "in": [
+          "y"
+        ]
+      }
+    },
+    {
+      "id": "A-chat",
+      "title": "Consumer chatbot AI disclosure",
+      "source": "Additional Use Case Guidelines / Consumer chat",
+      "source_terms": [
+        "C200"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "obligation",
+      "when": {
+        "dim": "product",
+        "in": [
+          "chat"
+        ]
+      },
+      "next_step": "Disclose AI interaction in the interface or at the beginning of each chat session.",
+      "require": {
+        "dim": "interface",
+        "in": [
+          "y"
+        ]
+      }
+    },
+    {
+      "id": "A-minor",
+      "title": "Conformity with minors guidelines",
+      "source": "Additional Use Case Guidelines / Products for minors",
+      "source_terms": [
+        "C201"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "obligation",
+      "when": {
+        "dim": "product",
+        "in": [
+          "minor"
+        ]
+      },
+      "next_step": "Verify conformity with the separately referenced child-facing guidance and applicable laws.",
+      "require": {
+        "dim": "minorcheck",
+        "in": [
+          "y"
+        ]
+      }
+    },
+    {
+      "id": "A-directory",
+      "title": "Conformity with directory rules",
+      "source": "Additional Use Case Guidelines / Listed software",
+      "source_terms": [
+        "C203"
+      ],
+      "effective_from": "2026-11-12",
+      "kind": "obligation",
+      "when": {
+        "dim": "product",
+        "in": [
+          "directory"
+        ]
+      },
+      "next_step": "Verify the listed software against the separately referenced directory policy.",
+      "require": {
+        "dim": "listcheck",
+        "in": [
+          "y"
+        ]
+      }
+    }
+  ],
+  "not_encoded": [
+    {
+      "clause": "C008",
+      "reason": "Policy date is applied as metadata and rule activation, not a new action restriction."
+    },
+    {
+      "clause": "C009",
+      "reason": "Defines boundary of the entire generic bundle; cannot independently infer the product behind a submitted vector."
+    },
+    {
+      "clause": "C013",
+      "reason": "Universal scope is applied to all universal rules and is not a separate action constraint."
+    },
+    {
+      "clause": "C014",
+      "reason": "High-risk layer is implemented by the recommendation and equipment triggers, with no separate obligation here."
+    },
+    {
+      "clause": "C015",
+      "reason": "Organizational overview; impose the actual controls in C200/C201/C203."
+    },
+    {
+      "clause": "C016",
+      "reason": "No new restriction; action-specific administration rather than industry-wide exclusion."
+    },
+    {
+      "clause": "C020",
+      "reason": "Individual government contract terms and authorization not supplied; no blanket generic exception."
+    },
+    {
+      "clause": "C199",
+      "reason": "Additional controls are already independently triggered. No separate obligation."
+    },
+    {
+      "clause": "C202",
+      "reason": "Extends the same substantive rules to each tool action; no separate self-referential rule or tool logs to map."
+    }
+  ],
+  "notes": [
+    "Treat universal categories as evidenced classifications of the action, not author opinions. The bundle does not decide hidden intent, local law or separate listed policies from free text.",
+    "An authorized, lawful security assessment is not categorized as malicious code merely because it evaluates security; an authorization does not waive an independent universal prohibition.",
+    "Tool/browser actions by agents are evaluated one action at a time against these same substantive rules.",
+    "Externally referenced product policies require documented review; the source text did not include their independent terms."
+  ]
+}
