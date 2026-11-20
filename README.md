@@ -13,7 +13,7 @@ This repository has two parts:
 
 | part | what it is |
 |---|---|
-| [`plugins/policy-action-check/`](plugins/policy-action-check/) | A Claude Code plugin that reads a policy and your history once and builds the bundle. It also ships the reference engine `scripts/pac.py` (Python standard library only). |
+| [`plugins/policy-action-check/`](plugins/policy-action-check/) | A standalone plugin that reads a policy and your history once and builds the bundle. It also ships the reference engine `scripts/pac.py` (Python standard library only). |
 | [`apps/pac-reader/`](apps/pac-reader/) | **Policy Action Reader**, a single-file web app that opens a bundle, lets you build cases on a case map, and shows the report. It runs entirely in the browser and uploads nothing. |
 
 The bundle format is specified in
