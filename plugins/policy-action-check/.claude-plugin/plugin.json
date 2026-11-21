@@ -1,7 +1,7 @@
 {
   "name": "policy-action-check",
   "displayName": "Policy Action Check",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "Turn any policy or terms (plus your action history) into two files: a generator for writing actions as short codes, and a judge that says which terms a code violates, what is required next, and the smallest fix. Runs end to end automatically.",
   "author": { "name": "oceanszoo" },
   "repository": "https://github.com/oceanszoo/policy-action-check",

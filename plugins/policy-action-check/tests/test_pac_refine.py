@@ -11,7 +11,7 @@ import pytest
 
 PLUGIN = Path(__file__).resolve().parents[1]
 SCRIPT = PLUGIN / "scripts" / "pac.py"
-EXAMPLE = PLUGIN / "examples" / "anthropic-aup"
+EXAMPLE = PLUGIN.parents[1] / "tests" / "fixtures" / "sample-bundle"
 PRIVACY_CODE = "act=biz pur=std pr_meta=n"
 FRAMING_CODE = "act=biz pur=std fr_meta=y"
 VIOLATION_CODE = "act=biz pur=data cons=n"

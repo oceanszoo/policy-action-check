@@ -1,0 +1,38 @@
+{"id": "R001", "code": "pur=cyber auth=own", "step": "deliver", "outcome": "approved"}
+{"id": "R002", "code": "pur=cyber auth=unauth", "step": "review", "outcome": "blocked"}
+{"id": "R003", "code": "pur=track cons=y", "step": "archive", "outcome": "approved"}
+{"id": "R004", "code": "pur=track cons=n", "step": "review", "outcome": "blocked"}
+{"id": "R005", "code": "pur=imp fic=lab", "step": "archive", "outcome": "approved"}
+{"id": "R006", "code": "pur=imp fic=real", "step": "archive", "outcome": "blocked"}
+{"id": "R007", "code": "@claim-pay rev=n", "step": "archive", "outcome": "approved"}
+{"id": "R008", "code": "act=biz pur=std hr=ins scope=ind fav=part rev=n", "step": "deliver", "outcome": "blocked"}
+{"id": "R009", "code": "act=biz pur=std hr=emp scope=ind fav=part rev=y disc=y", "step": "intake", "outcome": "approved"}
+{"id": "R010", "code": "act=biz pur=std hr=med scope=nc", "step": "revise", "outcome": "approved"}
+{"id": "R011", "code": "@support-bot", "step": "draft", "outcome": "flagged"}
+{"id": "R012", "code": "@support-bot disc=n", "step": "archive", "outcome": "blocked"}
+{"id": "R013", "code": "@robot-shared stop=y safe=y lim=y", "step": "intake", "outcome": "approved"}
+{"id": "R014", "code": "@robot-shared stop=y safe=y lim=n", "step": "draft", "outcome": "blocked"}
+{"id": "R015", "code": "act=biz pur=std phys=nc", "step": "intake", "outcome": "approved"}
+{"id": "R016", "code": "pur=abuse", "step": "review", "outcome": "blocked"}
+{"id": "R017", "code": "pur=data", "step": "revise", "outcome": "flagged"}
+{"id": "R018", "code": "pur=std hr=ins scope=ind fav=part rev=y disc=y date=2026-11-01", "step": "draft", "outcome": "approved"}
+{"id": "R019", "code": "act=biz pur=data+cyber auth=own cons=y", "step": "revise", "outcome": "approved"}
+{"id": "R020", "code": "act=biz pur=track+fraud cons=y", "step": "deliver", "outcome": "blocked"}
+{"id": "R021", "code": "act=biz pur=cyber+data auth=own", "step": "intake", "outcome": "flagged"}
+{"id": "R022", "code": "act=biz pur=illegal", "step": "deliver", "outcome": "blocked"}
+{"id": "R023", "code": "act=biz pur=infra", "step": "draft", "outcome": "blocked"}
+{"id": "R024", "code": "act=biz pur=weap", "step": "intake", "outcome": "blocked"}
+{"id": "R025", "code": "act=biz pur=viol", "step": "archive", "outcome": "blocked"}
+{"id": "R026", "code": "act=biz pur=data cons=n", "step": "draft", "outcome": "blocked"}
+{"id": "R027", "code": "act=biz pur=child", "step": "revise", "outcome": "blocked"}
+{"id": "R028", "code": "act=biz pur=harm", "step": "review", "outcome": "blocked"}
+{"id": "R029", "code": "act=biz pur=fake", "step": "draft", "outcome": "blocked"}
+{"id": "R030", "code": "act=biz pur=elect", "step": "revise", "outcome": "blocked"}
+{"id": "R031", "code": "act=biz pur=sex", "step": "draft", "outcome": "blocked"}
+{"id": "R032", "code": "act=biz phys=hi", "step": "intake", "outcome": "flagged"}
+{"id": "R033", "code": "act=biz pur=std chat=y disc=y", "step": "draft", "outcome": "approved"}
+{"id": "R034", "code": "act=biz pur=std fic=real", "step": "deliver", "outcome": "approved"}
+{"id": "R035", "code": "act=biz pur=std cons=n", "step": "deliver", "outcome": "approved"}
+{"id": "R036", "code": "act=biz pur=std hr=none scope=ind fav=part", "step": "revise", "outcome": "approved"}
+{"id": "R037", "code": "act=biz pur=false", "step": "draft", "outcome": "blocked"}
+{"id": "R038", "code": "act=biz pur=emo", "step": "draft", "outcome": "blocked"}

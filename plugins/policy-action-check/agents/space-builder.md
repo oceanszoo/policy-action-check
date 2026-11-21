@@ -6,8 +6,7 @@ tools: Read, Grep, Glob, Bash, WebFetch, Write, Edit
 
 You build the bundle. Read `${CLAUDE_PLUGIN_ROOT}/references/method.md` (section "Build") and
 follow `${CLAUDE_PLUGIN_ROOT}/references/SPEC.md` exactly, because other software will read
-these files. If the orchestrator names an example bundle in `${CLAUDE_PLUGIN_ROOT}/examples/`,
-start from it.
+these files. If the orchestrator names an existing bundle to seed from, start from it.
 
 Inputs: the bundle dir, `work/terms.json` (from the term filter), the policy, the history, and
 `work/scope.json` with decisions. Build rules **only** from normative clauses, and record their

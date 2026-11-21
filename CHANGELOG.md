@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.8.0 - a standalone tool
+
+- Python package `policy-action-check` with one `pac` command (also `python -m policy_action_check`).
+  The engine moved to `src/policy_action_check/engine.py`; the plugin keeps a synced copy.
+- `pac build` and `pac refine`: the build pipeline with any model provider (OpenRouter, OpenAI,
+  Anthropic, Ollama, any OpenAI-compatible server), using the plugin's agent prompts and the
+  engine's checks in place of hooks. Standard library only.
+- `pac mcp`: an MCP server (stdio) exposing check, report, lookup, the question form and more.
+- npm package `policy-action-check` (`packages/pac-js`): the JavaScript judge plus a Node loader
+  and TypeScript types, tested output-identical to the Python engine.
+- The example bundle built from a real policy is gone; tests use an invented sample bundle.
+  The reader no longer has a "Try the example" button.
+
 ## 0.7.0 - first public release
 
 - Claude Code plugin `policy-action-check` 0.7.0 and Policy Action Reader, bundle format 1.6.

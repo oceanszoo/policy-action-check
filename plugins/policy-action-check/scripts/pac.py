@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""pac: exact engine for the policy-action-check plugin (standard library only).
+"""pac: exact engine for policy-action-check (standard library only).
+
+This file is the package module ``policy_action_check.engine``. The Claude Code plugin ships a
+byte-identical copy as ``plugins/policy-action-check/scripts/pac.py`` (kept in sync by
+``tools/sync.py``), so the plugin works without installing anything.
 
 The model does the fuzzy work (scope questions, terms -> rules, words -> codes). This script does
 the exact work, so the same code always gets the same verdict:

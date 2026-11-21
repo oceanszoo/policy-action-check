@@ -5,7 +5,29 @@ on:
   pull_request:
 
 jobs:
-  test:
+  python:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: python -m pip install -e '.[dev]'
+      - run: ruff check .
+      - name: Plugin and reader copies match their sources
+        run: python tools/sync.py --check
+      - run: python -m pytest -q
+      - name: Sample bundle validates with the installed command
+        run: pac --space tests/fixtures/sample-bundle validate
+
+  javascript:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -15,10 +37,31 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-      - run: python -m pip install pytest ruff
-      - run: ruff check .
-      - run: python -m pytest -q
       - name: Reader build is current
         run: node apps/pac-reader/build.mjs --check
-      - name: Example bundle validates
-        run: python3 plugins/policy-action-check/scripts/pac.py --space plugins/policy-action-check/examples/anthropic-aup validate
+      - name: JavaScript judge matches the Python engine
+        run: node apps/pac-reader/tests/parity.mjs
+      - name: npm package
+        working-directory: packages/pac-js
+        run: |
+          npm test
+          npm pack --dry-run
+
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install build
+      - run: python -m build
+      - name: Wheel installs and runs outside the repository
+        run: |
+          python -m venv /tmp/wheel-env
+          /tmp/wheel-env/bin/pip install dist/*.whl
+          cd /tmp
+          /tmp/wheel-env/bin/pac --version
+          /tmp/wheel-env/bin/pac providers
+          /tmp/wheel-env/bin/python -c "from policy_action_check import builder; assert '# SPEC.md' in builder.system_prompt('build')"
+          /tmp/wheel-env/bin/pac --space "$GITHUB_WORKSPACE/tests/fixtures/sample-bundle" report "@support-bot"

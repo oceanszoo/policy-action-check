@@ -18,12 +18,16 @@ const page = await browser.newPage({ viewport: { width: 900, height: 1000 } });
 const errors = [];
 page.on("pageerror", (e) => errors.push(String(e)));
 await page.goto(pathToFileURL(join(here, "../dist/pac-reader.html")).href);
-await page.click("#load-example");
+// The synthetic sample bundle (tests/fixtures/sample-bundle) is opened through the file picker.
+const exampleDir = join(here, "../../../tests/fixtures/sample-bundle");
+const loadSample = async () => page.locator("#pick-files").setInputFiles(await Promise.all(
+  ["generator.json", "judge.json", "bundle.json", "conformance.jsonl", "BUNDLE.md"].map(async (name) => ({
+    name, mimeType: name.endsWith(".md") ? "text/markdown" : "application/json", buffer: await readFile(join(exampleDir, name)) }))));
+await loadSample();
 await page.waitForSelector("#pick-category .cat");
 if (!(await page.textContent("#bundle-info")).includes("self-exam passed")) fail("exam badge not shown");
 const guide = page.locator("#bundle-info .bundle-guide");
 await guide.locator("summary").click();
-const exampleDir = join(here, "../../../plugins/policy-action-check/examples/anthropic-aup");
 const exampleGuide = await readFile(join(exampleDir, "BUNDLE.md"), "utf8");
 if (await guide.getAttribute("open") === null || (await guide.locator("pre").textContent()) !== exampleGuide) fail("example Guide does not show the original plain text");
 await guide.locator("summary").click();
@@ -112,7 +116,7 @@ await page.locator('#cases .mv[data-mv="value"][data-id="cyber"][data-dir="-1"]'
 const vals = await page.locator('#cases .val[data-key="pur"]').evaluateAll((els) => els.map((e) => e.dataset.value));
 if (vals.indexOf("cyber") !== 6) fail("value not moved up: " + vals.join(","));
 await page.reload();
-await page.click("#load-example");
+await loadSample();
 await page.waitForSelector("#pick-category .cat");
 if ((await firstCat()) !== "Security or systems work") fail("order not remembered");
 await page.click("#arrange"); await page.click("#reset-order");

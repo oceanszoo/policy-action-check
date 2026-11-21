@@ -14,13 +14,13 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import pac
 
-AUP = ROOT / "examples" / "anthropic-aup"
+SAMPLE = ROOT.parents[1] / "tests" / "fixtures" / "sample-bundle"
 LABELS = Path(__file__).resolve().parent / "fixtures" / "labels.jsonl"
 
 
 @pytest.fixture(scope="module")
 def space():
-    return pac.Space(AUP)
+    return pac.Space(SAMPLE)
 
 
 def judge(space, code):
@@ -30,12 +30,12 @@ def judge(space, code):
 # ------------------------------------------------------------- bundle and conformance
 
 
-def test_example_bundle_validates():
-    assert pac.validate(AUP) == []
+def test_sample_bundle_validates():
+    assert pac.validate(SAMPLE) == []
 
 
 def test_rejects_other_major_version(tmp_path):
-    shutil.copytree(AUP, tmp_path / "b")
+    shutil.copytree(SAMPLE, tmp_path / "b")
     g = json.loads((tmp_path / "b" / "generator.json").read_text())
     g["version"] = "2.0"
     (tmp_path / "b" / "generator.json").write_text(json.dumps(g))
@@ -44,14 +44,14 @@ def test_rejects_other_major_version(tmp_path):
 
 
 def test_manifest_digests(tmp_path):
-    shutil.copytree(AUP, tmp_path / "b")
-    man = pac.write_manifest(tmp_path / "b", "https://www.anthropic.com/aup")
+    shutil.copytree(SAMPLE, tmp_path / "b")
+    man = pac.write_manifest(tmp_path / "b", "https://example.com/sample-service-terms")
     assert man["format"] == "pac-bundle"
     assert set(man["files"]) == {"generator.json", "judge.json", "conformance.jsonl", "BUNDLE.md"}
 
 
 def test_conformance_mismatch_is_reported(tmp_path):
-    shutil.copytree(AUP, tmp_path / "b")
+    shutil.copytree(SAMPLE, tmp_path / "b")
     with (tmp_path / "b" / "conformance.jsonl").open("a") as f:
         f.write(json.dumps({"code": "pur=abuse", "expected": {"verdict": "compliant"}}) + "\n")
     assert any("conformance" in e for e in pac.validate(tmp_path / "b"))
@@ -138,43 +138,43 @@ def test_panel_flags_violation_at_first_token(space):
 
 # ------------------------------------------------------------- the eval set's clause cases
 
-# Hand-written codes for the aup_clause scenarios in tests/fixtures/labels.jsonl.
-# This checks that the example bundle can express each case and that the engine agrees with
+# Hand-written codes for the clause scenarios in tests/fixtures/labels.jsonl.
+# This checks that the sample bundle can express each case and that the engine agrees with
 # the labels. It does not test text-to-code encoding, which is the model's job.
 CLAUSE_CODES = {
-    "aup-pentest-authorized": "act=biz pur=cyber auth=own",
-    "aup-pentest-out-of-scope": "act=biz pur=cyber auth=unauth",
-    "aup-aml-screening": "act=biz pur=track cons=y",
-    "aup-track-partner": "act=con pur=track cons=n",
-    "aup-labelled-satire": "act=biz pur=imp fic=lab",
-    "aup-unlabelled-fake-quote": "act=con pur=imp fic=real",
-    "aup-insurer-pay-full": "@claim-pay",
-    "aup-insurer-auto-deny": "act=biz pur=std hr=ins scope=ind fav=part rev=n",
-    "aup-insurer-partial": "act=biz pur=std hr=ins scope=ind fav=part rev=n disc=y",
-    "aup-hiring-reviewed": "act=biz pur=std hr=emp scope=ind fav=part rev=y disc=y",
-    "aup-hiring-auto-reject": "act=biz pur=std hr=emp scope=ind fav=part rev=n",
-    "aup-mental-health-direct": "act=biz pur=std hr=med scope=ind fav=na rev=n chat=y",
-    "aup-wellness-blog": "act=biz pur=std hr=med scope=nc",
-    "aup-support-bot": "@support-bot",
-    "aup-support-bot-human": "@support-bot disc=n",
-    "aup-robot-safe": "@robot-shared stop=y safe=y lim=y",
-    "aup-robot-model-limits": "@robot-shared stop=y safe=y lim=n",
-    "aup-robot-vacuum": "act=con pur=std phys=nc",
-    "aup-hazard-lab": "act=biz pur=std phys=hi stop=y",
-    "aup-distillation": "act=biz pur=abuse",
-    "aup-essay-for-credit": "act=con pur=fraud",
-    "aup-loan-reviewed": "act=biz pur=std hr=credit scope=ind fav=part rev=y disc=y",
-    "aup-arrest-decision": "act=biz pur=lawenf",
-    "aup-employee-emotion": "act=biz pur=emo",
-    "aup-driver-drowsiness": "act=biz pur=std",
-    "aup-shopping-agent": "act=agt pur=std chat=y disc=y",
+    "sample-pentest-authorized": "act=biz pur=cyber auth=own",
+    "sample-pentest-out-of-scope": "act=biz pur=cyber auth=unauth",
+    "sample-aml-screening": "act=biz pur=track cons=y",
+    "sample-track-partner": "act=con pur=track cons=n",
+    "sample-labelled-satire": "act=biz pur=imp fic=lab",
+    "sample-unlabelled-fake-quote": "act=con pur=imp fic=real",
+    "sample-insurer-pay-full": "@claim-pay",
+    "sample-insurer-auto-deny": "act=biz pur=std hr=ins scope=ind fav=part rev=n",
+    "sample-insurer-partial": "act=biz pur=std hr=ins scope=ind fav=part rev=n disc=y",
+    "sample-hiring-reviewed": "act=biz pur=std hr=emp scope=ind fav=part rev=y disc=y",
+    "sample-hiring-auto-reject": "act=biz pur=std hr=emp scope=ind fav=part rev=n",
+    "sample-mental-health-direct": "act=biz pur=std hr=med scope=ind fav=na rev=n chat=y",
+    "sample-wellness-blog": "act=biz pur=std hr=med scope=nc",
+    "sample-support-bot": "@support-bot",
+    "sample-support-bot-human": "@support-bot disc=n",
+    "sample-robot-safe": "@robot-shared stop=y safe=y lim=y",
+    "sample-robot-model-limits": "@robot-shared stop=y safe=y lim=n",
+    "sample-robot-vacuum": "act=con pur=std phys=nc",
+    "sample-hazard-lab": "act=biz pur=std phys=hi stop=y",
+    "sample-distillation": "act=biz pur=abuse",
+    "sample-essay-for-credit": "act=con pur=fraud",
+    "sample-loan-reviewed": "act=biz pur=std hr=credit scope=ind fav=part rev=y disc=y",
+    "sample-arrest-decision": "act=biz pur=lawenf",
+    "sample-employee-emotion": "act=biz pur=emo",
+    "sample-driver-drowsiness": "act=biz pur=std",
+    "sample-shopping-agent": "act=agt pur=std chat=y disc=y",
 }
 
 
 def _labels():
     if not LABELS.exists():
         return {}
-    return {r["id"]: r for r in map(json.loads, LABELS.read_text().splitlines()) if r["source_type"] == "aup_clause"}
+    return {r["id"]: r for r in map(json.loads, LABELS.read_text().splitlines()) if r["source_type"] == "clause"}
 
 
 @pytest.mark.parametrize("sid", sorted(CLAUSE_CODES))
@@ -226,7 +226,7 @@ def test_fix_never_changes_the_nature_of_the_action(space):
 
 def test_bundle_values_must_be_objective(tmp_path):
     b = tmp_path / "b"
-    shutil.copytree(AUP, b)
+    shutil.copytree(SAMPLE, b)
     g = json.loads((b / "generator.json").read_text())
     g["dimensions"][0]["values"]["low_risk"] = "low risk"
     (b / "generator.json").write_text(json.dumps(g))
@@ -259,7 +259,7 @@ def test_prompt_hook_ignores_unrelated(tmp_path):
 
 def test_guard_hook_asks_on_violation(tmp_path):
     b = tmp_path / "b"
-    shutil.copytree(AUP, b)
+    shutil.copytree(SAMPLE, b)
     g = json.loads((b / "generator.json").read_text())
     g["tool_map"] = {"base": "act=agt pur=std", "mappings": [
         {"tool": "^mcp__claims__", "input": "deny", "code": "hr=ins scope=ind fav=part rev=n"}]}
@@ -304,7 +304,7 @@ def test_term_filter_validation(tmp_path):
 
 def test_rule_built_from_description_is_rejected(tmp_path):
     b = tmp_path / "b"
-    shutil.copytree(AUP, b)
+    shutil.copytree(SAMPLE, b)
     _terms(b, [{"id": "c1", "class": "description", "text": "We care about safety."}])
     j = json.loads((b / "judge.json").read_text())
     j["rules"][0]["source_terms"] = ["c1"]
@@ -355,7 +355,7 @@ def test_requirements_are_separate_from_unknown_facts(space):
 
 
 def test_space_over_budget_is_rejected_unless_raised_with_reason(tmp_path):
-    shutil.copytree(AUP, tmp_path / "b")
+    shutil.copytree(SAMPLE, tmp_path / "b")
     gpath = tmp_path / "b" / "generator.json"
     g = json.loads(gpath.read_text())
     g["limits"] = {"max_dimensions": 5}
@@ -440,7 +440,7 @@ def test_report_is_filled_from_bundle_text(space):
 
 
 def test_bundle_carries_its_own_subjective_words_and_records(tmp_path):
-    shutil.copytree(AUP, tmp_path / "b")
+    shutil.copytree(SAMPLE, tmp_path / "b")
     g = json.loads((tmp_path / "b" / "generator.json").read_text())
     g["subjective_terms"] = ["vibes"]
     (tmp_path / "b" / "generator.json").write_text(json.dumps(g))
@@ -458,7 +458,7 @@ def test_bundle_carries_its_own_subjective_words_and_records(tmp_path):
 
 
 def test_version_1_2_requires_questions(tmp_path):
-    shutil.copytree(AUP, tmp_path / "b")
+    shutil.copytree(SAMPLE, tmp_path / "b")
     g = json.loads((tmp_path / "b" / "generator.json").read_text())
     del g["dimensions"][0]["question"]
     g["lexicon"].append({"phrase": "x", "token": "hr=nope"})
@@ -507,7 +507,7 @@ def test_flow_judges_each_action(space):
 
 
 def test_next_steps_bind_to_the_action_name(tmp_path):
-    shutil.copytree(AUP, tmp_path / "b")
+    shutil.copytree(SAMPLE, tmp_path / "b")
     g = json.loads((tmp_path / "b" / "generator.json").read_text())
     g["transitions"] = {"draft": {"review": 3, "deliver": 1}}
     (tmp_path / "b" / "generator.json").write_text(json.dumps(g))
@@ -517,7 +517,7 @@ def test_next_steps_bind_to_the_action_name(tmp_path):
 
 
 def test_form_finds_rules_that_need_two_values_together(tmp_path):
-    shutil.copytree(AUP, tmp_path / "b")
+    shutil.copytree(SAMPLE, tmp_path / "b")
     j = json.loads((tmp_path / "b" / "judge.json").read_text())
     j["rules"].append({"id": "P-both", "kind": "prohibition", "source": "test", "next_step": "Do not proceed.",
                        "when": {"all": [{"dim": "pur", "in": ["data"]}, {"dim": "pur", "in": ["track"]},
@@ -540,8 +540,8 @@ def _exam(root):
     return {c["id"]: c for c in pac.exam(root, write=False)["checks"]}
 
 
-def test_example_bundle_passes_its_self_exam():
-    res = pac.exam(AUP, write=False)
+def test_sample_bundle_passes_its_self_exam():
+    res = pac.exam(SAMPLE, write=False)
     assert res["passed"], [c for c in res["checks"] if not c["passed"]]
     references = next(c for c in res["checks"] if c["id"] == "references")
     assert not references["skipped"] and references["passed"], references
@@ -556,7 +556,7 @@ def test_example_terms_store_quotes_and_summaries_separately(space):
 
 
 def test_exam_catches_an_untested_rule(tmp_path):
-    shutil.copytree(AUP, tmp_path / "b")
+    shutil.copytree(SAMPLE, tmp_path / "b")
     lines = (tmp_path / "b" / "conformance.jsonl").read_text().splitlines()
     (tmp_path / "b" / "conformance.jsonl").write_text(
         "\n".join(x for x in lines if "P-weapons" not in x) + "\n")
@@ -566,7 +566,7 @@ def test_exam_catches_an_untested_rule(tmp_path):
 
 
 def test_exam_mutation_finds_weak_tests(tmp_path):
-    shutil.copytree(AUP, tmp_path / "b")
+    shutil.copytree(SAMPLE, tmp_path / "b")
     lines = (tmp_path / "b" / "conformance.jsonl").read_text().splitlines()
     keep = [x for x in lines if '"pur=cyber auth=own"' in x or "pur=cyber auth=unauth" in x]
     (tmp_path / "b" / "conformance.jsonl").write_text("\n".join(keep) + "\n")
@@ -575,7 +575,7 @@ def test_exam_mutation_finds_weak_tests(tmp_path):
 
 
 def test_exam_terms_coverage_needs_rule_or_reason(tmp_path):
-    shutil.copytree(AUP, tmp_path / "b")
+    shutil.copytree(SAMPLE, tmp_path / "b")
     (tmp_path / "b" / "work").mkdir()
     clause = {"id": "c900", "class": "prohibition", "text": "Do not do X.", "confidence": "high"}
     (tmp_path / "b" / "work" / "terms.json").write_text(json.dumps({"clauses": [clause]}))
@@ -587,7 +587,7 @@ def test_exam_terms_coverage_needs_rule_or_reason(tmp_path):
 
 
 def test_exam_replay_needs_agreement_and_reasons(tmp_path):
-    shutil.copytree(AUP, tmp_path / "b")
+    shutil.copytree(SAMPLE, tmp_path / "b")
     g = json.loads((tmp_path / "b" / "generator.json").read_text())
     g["outcome_map"] = {"approved": ["compliant"], "blocked": ["violates"]}
     (tmp_path / "b" / "generator.json").write_text(json.dumps(g))
@@ -613,7 +613,7 @@ def test_exam_replay_needs_agreement_and_reasons(tmp_path):
 
 
 def test_badge_only_for_exam_on_current_files(tmp_path):
-    shutil.copytree(AUP, tmp_path / "b")
+    shutil.copytree(SAMPLE, tmp_path / "b")
     pac.exam(tmp_path / "b")
     assert pac.write_manifest(tmp_path / "b")["exam"]["passed"] is True
     g = tmp_path / "b" / "generator.json"
@@ -622,7 +622,7 @@ def test_badge_only_for_exam_on_current_files(tmp_path):
 
 
 def test_verifier_cannot_stop_while_exam_fails(tmp_path, monkeypatch):
-    shutil.copytree(AUP, tmp_path / "b")
+    shutil.copytree(SAMPLE, tmp_path / "b")
     lines = (tmp_path / "b" / "conformance.jsonl").read_text().splitlines()
     (tmp_path / "b" / "conformance.jsonl").write_text(
         "\n".join(x for x in lines if "P-weapons" not in x) + "\n")
@@ -660,7 +660,7 @@ def test_sequence_report_keeps_plain_action_headings(space):
 def test_categories_from_bundle_and_fallback(space, tmp_path):
     cats = pac.categories(space)
     assert cats[0]["id"] == "chat" and cats[0]["preset"] == "chat=y" and "disc" in cats[0]["features"]
-    shutil.copytree(AUP, tmp_path / "b")
+    shutil.copytree(SAMPLE, tmp_path / "b")
     g = json.loads((tmp_path / "b" / "generator.json").read_text())
     del g["categories"]
     g["version"] = "1.3"
@@ -671,7 +671,7 @@ def test_categories_from_bundle_and_fallback(space, tmp_path):
 
 
 def test_validate_categories(tmp_path):
-    shutil.copytree(AUP, tmp_path / "b")
+    shutil.copytree(SAMPLE, tmp_path / "b")
     path = tmp_path / "b" / "generator.json"
     g = json.loads(path.read_text())
 
@@ -751,7 +751,7 @@ def test_map_fit_picks_the_deepest_matching_category(space):
 
 
 def test_validate_nesting(tmp_path):
-    shutil.copytree(AUP, tmp_path / "b")
+    shutil.copytree(SAMPLE, tmp_path / "b")
     path = tmp_path / "b" / "generator.json"
     g = json.loads(path.read_text())
     dims = {d["key"]: d for d in g["dimensions"]}
@@ -760,14 +760,14 @@ def test_validate_nesting(tmp_path):
     path.write_text(json.dumps(g))
     found = " | ".join(pac.validate(tmp_path / "b"))
     assert "unknown value fav=zz" in found and "forms a loop" in found
-    g = json.loads((AUP / "generator.json").read_text())
+    g = json.loads((SAMPLE / "generator.json").read_text())
     g["categories"][2]["children"][0]["preset"] = "auth=own lim=y"  # lim is not a folder there
     path.write_text(json.dumps(g))
     assert any("preset key 'lim'" in e for e in pac.validate(tmp_path / "b"))
 
 
 def test_exam_map_fit_fails_when_cases_fall_outside_the_map(tmp_path):
-    shutil.copytree(AUP, tmp_path / "b")
+    shutil.copytree(SAMPLE, tmp_path / "b")
     path = tmp_path / "b" / "generator.json"
     g = json.loads(path.read_text())
     g["categories"] = [c for c in g["categories"] if c["id"] in ("chat", "other")]
@@ -788,11 +788,11 @@ def test_map_fit_drops_inapplicable_keys_without_altering_judgment(space, key, v
 
 
 def test_example_conformance_has_full_map_coverage(space):
-    codes = [row["code"] for row in pac._conformance(AUP)]
+    codes = [row["code"] for row in pac._conformance(SAMPLE)]
     assert all(pac.map_fit(pac.parse_code(code, space)["features"], space) is not None for code in codes)
-    report = pac.gaps(AUP)
+    report = pac.gaps(SAMPLE)
     assert report["gaps"] == []
-    item = next(c for c in pac.exam(AUP, write=False)["checks"] if c["id"] == "map_fit")
+    item = next(c for c in pac.exam(SAMPLE, write=False)["checks"] if c["id"] == "map_fit")
     assert item["score"] == 1
     assert item["detail"]["fits_after_drop"] == [
         {"code": "act=biz pur=std fic=real", "dropped": ["fic"]},
@@ -802,7 +802,7 @@ def test_example_conformance_has_full_map_coverage(space):
 
 def test_map_fit_refuses_drop_that_changes_judgment(tmp_path):
     bundle = tmp_path / "b"
-    shutil.copytree(AUP, bundle)
+    shutil.copytree(SAMPLE, bundle)
     judge = bundle / "judge.json"
     data = json.loads(judge.read_bytes())
     data["rules"].append({

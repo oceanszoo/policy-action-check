@@ -46,9 +46,6 @@ Run `pac.py status`, then pick the shortest path:
 | Bundle exists, and the user gives a new policy | Re-run 0 → 3, then 4–5 if there's an action |
 | The user wants a bundle for some terms, with no action | Stages 0 → 3, then report the bundle |
 
-For a known policy with no history, you can seed Stage 2 from
-`${CLAUDE_PLUGIN_ROOT}/examples/<policy>/` if one matches (for example `anthropic-aup`).
-
 Record progress with `pac.py state --stage <stage>`. Register inputs once with
 `pac.py state --policy <path> --history <path>`, so later runs notice changes.
 
